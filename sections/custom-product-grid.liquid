@@ -60,7 +60,7 @@
       {%- if section.settings.load_more_button_enable -%}
       <div class="row">
         <div class="col-lg-12 text-center mb-25">
-          <a class="lezada-loadmore-button" href="{{ section.settings.load_more_button_link }}"><i class="ion-{{ section.settings.load_more_btn_icon }}"></i> {{ section.settings.load_more_text | default: 'Load More' }}</a>
+          <a class="lezada-loadmore-button" href="{{ section.settings.load_more_button_link }}">{{ section.settings.load_more_text | default: 'Load More' }}</a>
         </div>
       </div>
       {%- endif -%}

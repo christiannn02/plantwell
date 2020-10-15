@@ -11,7 +11,7 @@
         <div class="logo">
           {%- if block.settings.logo -%}
           <a href="/" class="theme-logo">
-            <img src="{{ block.settings.logo | img_url: '95x95' }}" alt="{{ block.settings.logo.alt | default: shop.name }}">
+            <img src="{{ block.settings.logo | img_url: '100x100' }}" alt="{{ block.settings.logo.alt | default: shop.name }}">
 
           </a>
           {%- else -%}
@@ -24,12 +24,6 @@
 
         <div class="copyright-text">
            {{ block.settings.copy_right_text }}
-        </div>
-
-        <div class="payments-logo">
-          <i class="fa fa-cc-visa" aria-hidden="true"></i>
-          <i class="fa fa-cc-mastercard" aria-hidden="true"></i>
-          <i class="fa fa-cc-paypal" aria-hidden="true"></i>
         </div>
 
       </div>
@@ -63,13 +57,20 @@
           <nav>
             <ul>
               {% if block.settings.social_icon_1_name != blank %}
-              <li><a href="{{ block.settings.social_icon_1_link }}"><i class="fa fa-{{ block.settings.social_icon_1_name }}"></i> 2174 Railroad Avenue<br>Hercules CA 94547</a></li>        
+              <li><a href="{{ block.settings.social_icon_1_link }}"><i class="fa fa-{{ block.settings.social_icon_1_name }}"></i> {{ block.settings.social_icon_1_name }}</a></li>        
               {% endif %}
               {% if block.settings.social_icon_2_name != blank %}
-              <li><a  href="{{ block.settings.social_icon_2_link }}"><i class="fa fa-{{ block.settings.social_icon_2_name }}"></i> 9254807042 </a></li>        
+              <li><a  href="{{ block.settings.social_icon_2_link }}"><i class="fa fa-{{ block.settings.social_icon_2_name }}"></i> {{ block.settings.social_icon_2_name }} </a></li>        
               {% endif %}   
               {% if block.settings.social_icon_3_name != blank %}
-              <li><a  href="{{ block.settings.social_icon_3_link }}"><i class="fa fa-{{ block.settings.social_icon_3_name }}"></i> karmartstores@gmail.com </a></li>        
+              <li><a  href="{{ block.settings.social_icon_3_link }}"><i class="fa fa-{{ block.settings.social_icon_3_name }}"></i> {{ block.settings.social_icon_3_name }} </a></li>        
+              {% endif %}
+              {% if block.settings.social_icon_4_name != blank %}
+              <li><a href="{{ block.settings.social_icon_4_link }}"><i class="fa fa-{{ block.settings.social_icon_4_name }}"></i> {{ block.settings.social_icon_4_name }} </a></li>        
+              {% endif %}
+              
+              {% if block.settings.social_icon_5_name != blank %}
+              <li><a href="{{ block.settings.social_icon_5_link }}"><i class="fa fa-{{ block.settings.social_icon_5_name }}"></i> {{ block.settings.social_icon_5_name }} </a></li>        
               {% endif %}
             </ul>
           </nav>
@@ -127,17 +128,8 @@
 
       {% endcase %}
       {% endfor %}
-    </div>
-    <hr>
-    <div class="social-logo">
-      <a class="facebook" href = "#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-      <a class="instagram" href = "#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-    </div>
 
-    <div class="disclaimer">
-      <p>
-        Disclaimer: These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure or prevent any disease or<br> condition. These products should be used only as directed on the label by the manufacturer. Do not use these products if you are pregnant, nursing, have a serious medical condition, or<br> use prescription medications without consulting with your doctor first. These products are for adults only. These products are not intended for sale to persons under the age of majority<br> as determined by the state in which the consumer resides (18 unless otherwise applicable). Products containing plant based cannabinoids or hemp are available for U.S. interstate<br> commerce in accordance with the 2018 Agriculture Improvement Act 0f 2018 (“Act”) applicable to hemp-derived products. Pursuant to the Act, none of the products available on this<br> Site contain more than 0.3% of any psychoactive cannabinoids as measured on a dry weight basis by an independent laboratory providing a certificate of analysis to the manufacturer.<br> State or local laws may vary. We reserve the right not to sell certain products in certain states or localities. Customers are advised to familiarize themselves with those laws and<br> regulations that apply to them. Seller makes no representations regarding state or local requirements. Buyer assumes all risks.
-      </p>
+
 
     </div>
   </div>

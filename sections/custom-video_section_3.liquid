@@ -10,6 +10,9 @@
               <img src="{{ section.settings.logo_2 | img_url: '300x300' }}" alt="{{ section.settings.logo_2.alt | default: shop.name }}">
             </figure>
             {% endif %}
+            {%- if section.settings.about_title != '' -%}
+            <h1 class="heading-secondary mb--40 mb-md--20">{{ section.settings.about_title }}</h1>
+              {%- endif -%}
             <p class="font-2 heading-color font-size-16 mb--30 mb-md--20">{{ section.settings.about_description }}</p>
             <a href="{{ section.settings.about_button_url }}" class="lezada-button  lezada-button--medium ">{{ section.settings.about_button }}</a>
           </div>
@@ -18,14 +21,11 @@
         {% if section.settings.banner_enable %}
         <div class="{% if section.settings.video_banner_text_enable %} col-md-6 {% else %} col-12 {% endif %} {% if section.settings.product_banner_Post == 'left' %} order-1 {% elsif section.settings.product_banner_Post == 'right' %} order-2 {% endif %}">
           <figure class="image-box image-box-w-video-btn">
-            <a href="{{ section.settings.video_popup_url }}" class=" popup-video video-popup">
               {% if section.settings.video_image %}
               <img class="lazyload" src="{{ section.settings.video_image | img_url: '509x500', crop: 'center' }}" data-src="{{ section.settings.video_image | img_url: '509x500', crop: 'center' }}" {% if section.settings.video_image != blank %} data-srcset="{% include 'layload_datasrc', datascrc: section.settings.video_image, imagesize: '509x500' %}" {% endif %} alt="{{ video_image.alt }}">
               {% else %}
               <img src="https://via.placeholder.com/509x500" alt="banner">
               {% endif %}
-              <span class="video-btn "></span>
-            </a>
           </figure>
         </div>
         {% endif %}
@@ -155,6 +155,12 @@
             "type": "image_picker",
             "id": "logo_2",
             "label": "Logo"
+          },
+          {
+            "type": "text",
+            "id": "about_title",
+            "label": "About Title",
+            "default": "About Us"
           },
           {
             "type": "textarea",

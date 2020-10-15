@@ -3,7 +3,7 @@
       <div class="row">
         {% for block in section.blocks %}
         {%- capture bannerimg -%}
-        {%- if block.settings.banner_img != blank -%} {{ block.settings.banner_img | img_url: 'master' }}{% else %} https://via.placeholder.com/855x280 {%- endif -%}
+        {%- if block.settings.banner_img != blank -%} {{ block.settings.banner_img | img_url: '570x670' }}{% else %} https://via.placeholder.com/855x280 {%- endif -%}
         {%- endcapture -%}
         {%- case block.type -%}
         {% when 'banner_type_1' %}
@@ -11,10 +11,12 @@
           <!--=======  single banner  =======-->
   
           <div class="single-banner single-banner--hoverborder">
-            <a class="banner-link" href="{{ block.settings.banner_link }}"></a>
             <img src="{{ bannerimg }}" data-src="{{ bannerimg }}" {% if block.settings.banner_img != blank %} data-srcset="{%- include 'layload_datasrc', datascrc: block.settings.banner_img, dataimgsize: 'master' -%}" {% endif %} class="lazyload img-fluid" alt="{{ block.settings.banner_img.alt }}">
             <div class="banner-content banner-content--middle-white">
                {{ block.settings.banner_title1 }}
+               {% if section.settings.section_btn_text != blank %}
+          <a href="{{ section.settings.section_btn_link }}" class="lezada-shop-link">{{ section.settings.section_btn_text }}</a>
+          {% endif %}
               <p> {{ block.settings.banner_title2 }}</p>
             </div>
           </div>
@@ -30,10 +32,11 @@
           <!--=======  single banner  =======-->
   
           <div class="single-banner single-banner--hoverborder">
-            <a class="banner-link" href="{{ block.settings.banner_link }}"></a>
             <img src="{{ bannerimg }}" data-src="{{ bannerimg }}" {% if block.settings.banner_img != blank %} data-srcset="{%- include 'layload_datasrc', datascrc: block.settings.banner_img, dataimgsize: 'master' -%}" {% endif %} class="lazyload img-fluid" alt="{{ block.settings.banner_img.alt }}">
             <div class="banner-content banner-content--black-left">
-              <p> <span class="big-text">{{ block.settings.banner2_title1 }}</span>  <span class="small-text d-block">{{ block.settings.banner2_title2 }}</span></p>
+              <p> <span class="big-text">{{ block.settings.banner2_title1 }}</span>
+                <a href="{{ section.settings.section_btn_link }}"><span class="lezada-shop-link">{{ section.settings.section_btn_text }}</span></a><span class="small-text d-block">{{ block.settings.banner2_title2 }}</span></p>
+
             </div>
           </div>
   
@@ -242,6 +245,17 @@
                 "id": "banner2_title2",
                 "label": "Banner Small Text",
                 "default": "Free shipping on domestic orders"
+              },
+              {
+                "type": "text",
+                "id": "section_btn_text",
+                "label": "Section Btn Text",
+            "default": "Learn More"
+              },
+              {
+                "type": "url",
+                "id": "section_btn_link",
+                "label": "Section Button Link"
               },
               {
                   "type": "url",
