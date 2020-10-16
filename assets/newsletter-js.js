@@ -52,7 +52,22 @@
 		}
 
 		$(".popup_off").on('click', hideMessage);
+		$(".popup_off1").on('click', hideMessage);
+		
 
 	};
+
+	$('#popup-close').on('click', function() {
+		console.log('test');
+	})
+
+	var myWindow; 
+	function openWindow() { 
+		myWindow = window 
+				.open("https://plantwellglobal.com/", "_blank", "width=786, height=786"); 
+	} 
+	function closeWindow() { 
+		myWindow.close(myWindow); 
+	} 
 
 })(jQuery);

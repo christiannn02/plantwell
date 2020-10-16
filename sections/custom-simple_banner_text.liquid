@@ -6,27 +6,6 @@
         {%- if block.settings.banner_img != blank -%} {{ block.settings.banner_img | img_url: '570x670' }}{% else %} https://via.placeholder.com/855x280 {%- endif -%}
         {%- endcapture -%}
         {%- case block.type -%}
-        {% when 'banner_type_1' %}
-        <div id="block-{{ block.id }}" class="col-lg-{{ block.settings.lg_col }} col-md-{{ block.settings.md_col }} mb-30">
-          <!--=======  single banner  =======-->
-  
-          <div class="single-banner single-banner--hoverborder">
-            <img src="{{ bannerimg }}" data-src="{{ bannerimg }}" {% if block.settings.banner_img != blank %} data-srcset="{%- include 'layload_datasrc', datascrc: block.settings.banner_img, dataimgsize: 'master' -%}" {% endif %} class="lazyload img-fluid" alt="{{ block.settings.banner_img.alt }}">
-            <div class="banner-content banner-content--middle-white">
-               {{ block.settings.banner_title1 }}
-               {% if section.settings.section_btn_text != blank %}
-          <a href="{{ section.settings.section_btn_link }}" class="lezada-shop-link">{{ section.settings.section_btn_text }}</a>
-          {% endif %}
-              <p> {{ block.settings.banner_title2 }}</p>
-            </div>
-          </div>
-  
-         <style>
-             #block-{{ block.id }} .single-banner--hoverborder .banner-content--middle-white {
-               color: {{ block.settings.banner_content_color }};
-             }
-          </style>
-        </div>
         {% when 'banner_type_2' %}
         <div id="block-{{ block.id }}" class="col-lg-{{ block.settings.lg_col }} col-md-{{ block.settings.md_col }} mb-30">
           <!--=======  single banner  =======-->
@@ -35,7 +14,10 @@
             <img src="{{ bannerimg }}" data-src="{{ bannerimg }}" {% if block.settings.banner_img != blank %} data-srcset="{%- include 'layload_datasrc', datascrc: block.settings.banner_img, dataimgsize: 'master' -%}" {% endif %} class="lazyload img-fluid" alt="{{ block.settings.banner_img.alt }}">
             <div class="banner-content banner-content--black-left">
               <p> <span class="big-text">{{ block.settings.banner2_title1 }}</span>
-                <a href="{{ section.settings.section_btn_link }}"><span class="lezada-shop-link">{{ section.settings.section_btn_text }}</span></a><span class="small-text d-block">{{ block.settings.banner2_title2 }}</span></p>
+             
+                {% if block.settings.btn_text != blank %}
+                <span><a href="{{ block.settings.btn_link }}">{{ block.settings.btn_text }}</a></span></p>
+                {% endif %}
 
             </div>
           </div>
@@ -78,151 +60,6 @@
           }
       ],
       "blocks": [
-          {
-          "type": "banner_type_1",
-          "name": "Banner Type 1",
-          "settings": [
-              {
-                "type": "image_picker",
-                "id": "banner_img",
-                "label": "Banner Image",
-                "info": "Recommended Size: 430 x 610 px"
-              },
-              {
-                 "type": "richtext",
-                 "id": "banner_title1",
-                 "label": "Banner Title 1",
-                "default": "<p> <strong>10%</strong> off your </p>"
-              },
-              {
-                "type": "textarea",
-                "id": "banner_title2",
-                "label": "Banner Title 2",
-                "default": "next purchase"
-              },
-              {
-                  "type": "url",
-                  "id": "banner_link",
-                  "label": "URL"
-                },
-              {
-                  "type": "select",
-                  "id": "lg_col",
-                  "label": "Medium/Desktop Device Column",
-                  "options":[
-                        {
-                            "label": "Gird 12",
-                            "value": "12"
-                        },
-                        {
-                            "label": "Gird 11",
-                            "value": "11"
-                        },
-                        {
-                            "label": "Gird 10",
-                            "value": "10"
-                        },
-                        {
-                            "label": "Gird 9",
-                            "value": "9"
-                        },
-                        {
-                            "label": "Gird 8",
-                            "value": "8"
-                        },
-                        {
-                            "label": "Gird 7",
-                            "value": "7"
-                        },
-                        {
-                            "label": "Gird 6",
-                            "value": "6"
-                        },
-                        {
-                            "label": "Gird 5",
-                            "value": "5"
-                        },
-                        {
-                            "label": "Gird 4",
-                            "value": "4"
-                        },
-                        {
-                            "label": "Gird 3",
-                            "value": "3"
-                        },
-                        {
-                            "label": "Gird 2",
-                            "value": "2"
-                        }
-                    ],
-                    "default": "6"
-                },
-                {
-                  "type": "select",
-                  "id": "md_col",
-                  "label": "Large/Mac Device Column",
-                  "options":[
-                        {
-                            "label": "Gird 12",
-                            "value": "12"
-                        },
-                        {
-                            "label": "Gird 11",
-                            "value": "11"
-                        },
-                        {
-                            "label": "Gird 10",
-                            "value": "10"
-                        },
-                        {
-                            "label": "Gird 9",
-                            "value": "9"
-                        },
-                        {
-                            "label": "Gird 8",
-                            "value": "8"
-                        },
-                        {
-                            "label": "Gird 7",
-                            "value": "7"
-                        },
-                        {
-                            "label": "Gird 6",
-                            "value": "6"
-                        },
-                        {
-                            "label": "Gird 5",
-                            "value": "5"
-                        },
-                        {
-                            "label": "Gird 4",
-                            "value": "4"
-                        },
-                        {
-                            "label": "Gird 3",
-                            "value": "3"
-                        },
-                        {
-                            "label": "Gird 2",
-                            "value": "2"
-                        }
-                    ],
-                    "default": "6"
-                },
-                
-                {
-                  "type": "header",
-                  "content": "Banner Content Color"
-                },
-                {
-                  "type": "color",
-                  "id": "banner_content_color",
-                  "label": "Banner Content Color",
-                  "default": "#fff"	
-                }
-              
-            ]
-          },
           
           {
           "type": "banner_type_2",
@@ -248,14 +85,14 @@
               },
               {
                 "type": "text",
-                "id": "section_btn_text",
-                "label": "Section Btn Text",
+                "id": "btn_text",
+                "label": "Button Text",
             "default": "Learn More"
               },
               {
                 "type": "url",
-                "id": "section_btn_link",
-                "label": "Section Button Link"
+                "id": "btn_link",
+                "label": "Button Link"
               },
               {
                   "type": "url",
@@ -569,7 +406,7 @@
             "category": "Custom Sections",
              "blocks":[
                   {
-                      "type": "banner_type_1"
+                      "type": "banner_type_2"
                   },
                   {
                       "type": "banner_type_2"

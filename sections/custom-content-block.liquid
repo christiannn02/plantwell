@@ -1,0 +1,307 @@
+{% if section.settings.section_enable %}
+<div class="about-page-content mb-100 mb-sm-80" id="section-{{ section.id }}">
+  <div class="{% if section.settings.container_width == 'container' %} container {% elsif section.settings.container_width == 'fluid' %} container wide {% endif %}">
+    <div class="row">
+      {% for block in section.blocks %}
+      {%- capture bannerimg -%}
+      {%- if block.settings.banner_img != blank -%} {{ block.settings.banner_img | img_url: '570x670' }}{% else %} https://via.placeholder.com/855x280 {%- endif -%}
+      {%- endcapture -%}
+      {%- case block.type -%}
+      {% when 'single_content' %}
+      <div class="col-12 col-md-6 mb-sm-50">
+    <div class="banner-inner">
+        <div class="banner-image">
+        <img src="{{ bannerimg }}" data-src="{{ bannerimg }}" {% if block.settings.banner_img != blank %} data-srcset="{%- include 'layload_datasrc', datascrc: block.settings.banner_img, dataimgsize: 'master' -%}" {% endif %} class="lazyload img-fluid" alt="{{ block.settings.banner_img.alt }}">
+        </div>
+          {% if block.settings.content_title!= blank %}
+          <p><span><h1>{{ block.settings.content_title }}</h1></span>
+          {% endif %}
+        
+          {% if  block.settings.content_desc_btn != blank %}
+          <a href="{{  block.settings.content_desc_btn_link }}">{{ block.settings.content_desc_btn }}</a></p>
+          {% endif %}
+        </div>
+    </div>
+</div>
+      {% endcase %}
+      {% endfor %}
+      
+    </div>
+  </div>
+{% endif %}
+
+
+{% include 'section_typography' %}
+
+{% schema %}
+  {
+    "name": "Custom Content Block",
+    "settings": [
+		{
+		  "type": "header",
+          "content": "Section Enable"
+        },
+		{
+          "type": "checkbox",
+          "id": "section_enable",
+          "label": "Section Enable",  
+          "default": true
+      	},
+		{
+          "type":  "radio",
+          "id":    "container_width",
+          "label": "Container Width",
+          "options": [
+            { "value": "container", "label": "Container" },
+            { "value": "fluid", "label": "Full Width" }
+          ],
+          "default":   "container"
+        }
+	],
+	"blocks":[
+          {   
+          "type": "single_content",
+          "name": "Single Content Block",
+           "settings": [
+                {
+                "type": "image_picker",
+                "id": "banner_img",
+                "label": "Banner Image",
+                "info": "Recommended Size: 430 x 610 px"
+                },
+              {
+                "type": "textarea",
+                "id": "content_subtitle",
+                "label": "Content SubTitle",
+                "default": "On at oders over $99"
+              },
+              {
+                "type": "textarea",
+                "id": "content_title",
+                "label": "Content Title",
+                "default": "Free shipping & return"
+              },
+              {
+                "type": "textarea",
+                "id": "content_description",
+                "label": "Content Description",
+                "default": "Lorem ipsum dolor sit amet, consectetur cing elit. Suspe ndisse suscipit sagittis leo sit met condimentum estibulum issim Lorem ipsum dolor sit amet, consectetur cing elit."
+              },
+			  {
+                "type": "text",
+                "id": "content_desc_btn",
+                "label": "Content Description Btn Text",
+                "default": "LEARN MORE"
+              },
+              {
+                "type": "url",
+                "id": "content_desc_btn_link",
+                "label": "Content Description Btn Link"
+              }
+          ]
+       },
+		 {
+          "type": "section_margin",
+          "name": "Section Margin",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			}
+          ]
+       },
+	   {
+          "type": "section_padding",
+          "name": "Section Padding",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 100
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 80
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 60
+			}
+          ]
+       },
+	   {
+          "type": "section_background",
+          "name": "Section Background",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "image_picker",
+			  "id": "section_bg_image",
+			  "label": "BG Image"
+			},
+			{
+			  "type": "color",
+			  "id": "section_bg_color",
+			  "label": "BG Color",
+			  "default": "#ffffff"
+			}
+          ]
+       }
+	],
+	"presets": [
+		{
+		  "name": "Custom Content Block",
+		  "category": "Custom Sections",
+		  "blocks":[
+                {
+                	"type": "single_content"
+                },
+				{
+                	"type": "single_content"
+                }
+             ]
+		}
+	]
+  }
+{% endschema %}
+
+{% style %}
+
+.grid-item-add-holder .grid-item-title {
+transform: translate(-50%, -50%);
+position: absolute;
+top: 50%;
+left: 50%;
+z-index: 1;
+}
+
+{% endstyle %}
