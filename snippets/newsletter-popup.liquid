@@ -27,7 +27,7 @@
     {% if settings.newletter_popup_title != blank %}
     <h2 class="mb-60">{{ settings.newletter_popup_title }}</h2>
     {% endif %}
-    <div class="mc-newsletter-form mc-newsletter-form--popup mb-90">
+    <div class="mc-newsletter-form mc-newsletter-form--popup">
       {%- if form.errors -%}
       <div class="form-message form-message--error">
         {{ form.errors | default_errors }}
@@ -40,8 +40,10 @@
     <div class="warning-button">
       <!-- <a class="btn btn-medium btn-style-1 btn-bordered mt--30 mt-lg--10" href="#">Proceed</a>
       <a id="popup-close" href="#">close</a> -->
-      <button onclick="openWindow()">Open</button> 
-    <button onclick="closeWindow()">Close</button>  
+      <input id="leave" type="button" onclick="closeWin()" value="LEAVE SITE">
+      <!-- <button id="leave" onclick="window.open()">LEAVE SITE</button>  -->
+      <button></button>
+    <button id="proceed" onClick="window.close('','_parent','')">PROCEED, I'M 18+</button>  
     </div>
   </div>
 </div>

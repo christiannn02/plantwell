@@ -62,18 +62,12 @@
         <!--=======  End of subtotal calculation  =======-->
 
         <!--=======  cart buttons  =======-->
-		<div class="cart-buttons {% if section.settings.agree_button_enable %}disabled{% endif %}">
+		<div class="cart-buttons">
           
-          {%- if section.settings.checkout_btn_enable -%}
-          {%- if section.settings.agree_button_enable -%}
-          <input type="checkbox" id="ageree_term_cond" value="1">
-          <label for="ageree_term_cond">{{ section.settings.agree_button_text }}</label>
-          {%- endif -%}
-          <a class="checkout_btn" href="/checkout">{{ section.settings.mini_cart_checkout_title }}</a>
-          {%- endif -%}
+          <a class="checkout_btn" href="/cart">{{ section.settings.mini_cart_checkout_title }}</a>
           
           {%- if section.settings.cart_btn_enable -%}
-          <a href="/cart">{{ section.settings.view_cart_title }}</a>
+          <a class="cart_btn" href="/checkout">{{ section.settings.view_cart_title }}</a>
           {%- endif -%}
         </div>
 

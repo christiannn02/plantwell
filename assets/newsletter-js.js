@@ -57,17 +57,21 @@
 
 	};
 
-	$('#popup-close').on('click', function() {
-		console.log('test');
-	})
+	// $('#leave').on('click', function(){
+	// 	window.opener = self;
+	// 	window.close();
+	//  });
+	 var myWindow;
 
-	var myWindow; 
-	function openWindow() { 
-		myWindow = window 
-				.open("https://plantwellglobal.com/", "_blank", "width=786, height=786"); 
-	} 
-	function closeWindow() { 
-		myWindow.close(myWindow); 
-	} 
+	function openWin()
+	{
+	myWindow = window.open("","myWindow","width=200,height=100");
+	myWindow.document.write("<p>This is 'myWindow'</p>");
+	}
+
+	function closeWin(){
+ 
+		setTimeout("window.close()", 500);
+		}
 
 })(jQuery);

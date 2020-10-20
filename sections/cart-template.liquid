@@ -3,7 +3,10 @@
     {%- if cart.item_count > 0 -%}
     <form action="/cart" method="post" novalidate class="cart">
       <div class="row">
-        <div class="col-lg-12 mb-30">
+        <div class="col-lg-12">
+			<div class="remove-btn">
+			<a class="remove-button lezada-button--medium" href="/cart/clear"><i class="fa fa-trash"> {{ section.settings.clear_cart_title }}</i></a>
+		</div>
           <div class="cart-table-container">
             <table class="cart-table">
               <thead>
@@ -54,56 +57,38 @@
             </table>
           </div>
         </div>
-        <div class="col-lg-12 mb-80">
-          <div class="cart-coupon-area pb-30">
-            <div class="row align-items-center">
-              <div class="col-lg-12 text-left text-lg-right">
-                <input class="lezada-button lezada-button--medium" name="update" type="submit" value="{{ section.settings.update_button_title }}" />
-                <a class="lezada-button lezada-button--medium" href="/collections/all">{{ section.settings.continue_shopping_title }}</a>
-                <a class="lezada-button lezada-button--medium" href="/cart/clear">{{ section.settings.clear_cart_title }}</a>
-              </div>
-            </div>
-          </div>
-        </div>
         
         <div class="col-lg-12 col-12">
           <div class="cart-payment">
             <div class="row">
-              <div class="col-lg-6">  
-                
-                {%- if section.settings.delivery_date_enable -%}
-                {% render 'delivery-date' %}
-                {%- endif -%}
-
-                {%- if section.settings.cart_feature == 'cart_note' -%}
-                <div class="cart-coupon">
-                  <h3>{{ section.settings.cart_note_title }}</h3>
-                  <textarea name="note" class="" id="CartSpecialInstructions">{{ cart.note }}</textarea>
-                </div>
-                {%- elsif section.settings.cart_feature == 'shipping_calculator' -%}
-                {%- include 'cart-shipping-calculator' -%}
-                
-                {%- else -%}
-
-                {%- endif -%}
-              </div>
+				<div class="cart-coupon-area">
+					<div class="row align-items-center">
+				<div class="col-lg-12 text-left text-lg-right">
+					<input class="lezada-button lezada-button--medium" name="update" type="submit" value="{{ section.settings.update_button_title }}"/>
+					<a id="spacer"></a>
+					<a class="lezada-button lezada-button--medium" href="/collections/all">{{ section.settings.continue_shopping_title }}</a>
+				  </div>
+				</div>
+			</div>
+           
               <div class="col-lg-6">
-                <div class="cart-calculation-area">
-                  <h2 class="mb-40">{{ section.settings.cart_total_heading_title }}</h2>
-                  <table class="cart-calculation-table mb-30">
-                    <tbody>
-                      <tr class="cart-subtotal">
-                        <th>{{ section.settings.cart_subtotal_title }}</th>
-                        <td><span class="amount"><span id="bk-cart-subtotal-price">{{ cart.total_price | money }}</span></span></td>
-                      </tr>
-                      <tr class="order-total">
-                        <th>{{ section.settings.cart_total_title }}</th>
-                        <td>
-                          <strong><span class="amount"><span id="bk-cart-subtotal-price">{{ cart.total_price | money }}</span></span></strong>
-                        </td>
-                      </tr>											
-                    </tbody>
-                  </table>
+                <div class="cart-calculation-area">	
+						<div class="row">
+							<div class="col-6">
+								<p class="cart-sub">{{ section.settings.cart_subtotal_title }}</p>
+							</div>
+							<div class="col-6">
+								<p class="cart-sub-price"><span class="hulkapps-cart-original-total">{{ cart.total_price | money }}</span></p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-6 mt-20 mb-20">
+								<p class="cart-total mt-md-0 mt-sm-0">{{ section.settings.cart_total_title }}</p>
+							</div>
+							<div class="col-6 mt-20 mb-20">
+								<p class="cart-total-price"><span class="hulkapps-cart-original-total">{{ cart.total_price | money }}</span></p>
+							</div>
+						</div>
                   {%- if cart.total_discounts > 0 -%}
                   {% assign savings = cart.total_discounts | money %}
                   <p>
@@ -111,15 +96,10 @@
                   </p>
                   {%- endif -%}
                   
-                  <div class="cart-calculation-button {% if section.settings.check_term_condtion %} disabled{% endif %} text-center">
-                    {%- if section.settings.check_term_condtion -%}
-                    <input type="checkbox" id="cart_agree_to_check" value="1">
-                    <label for="cart_agree_to_check">{{ section.settings.agree_btn_text }}</label>
-                    {%- endif -%}
-
-                    <button type="submit" class="lezada-button lezada-button--medium checkout_btn" name="checkout">{{ section.settings.checkout_button_title }}</button>
-                  </div>
-                  
+                  <div class="cart-calculation-button {% if section.settings.check_term_condtion %}{% endif %} text-center">
+				  <button type="submit" class="lezada-button1 lezada-button--medium checkout_btn" name="checkout">{{ section.settings.checkout_button_title }}</button>
+                  		</div>
+				</div>
                 </div>
               </div>
             </div>
@@ -145,7 +125,8 @@
 </div>
 <!-- PAGE SECTION END -->
 
-{%- include 'section_typography' -%}
+{%- include 'section_typography' -%} 
+
 
 <style>
   #section-{{ section.id }} .lezada-button.lezada-button--medium.checkout_btn {
