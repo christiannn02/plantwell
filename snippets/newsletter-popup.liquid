@@ -40,10 +40,14 @@
     <div class="warning-button">
       <!-- <a class="btn btn-medium btn-style-1 btn-bordered mt--30 mt-lg--10" href="#">Proceed</a>
       <a id="popup-close" href="#">close</a> -->
-      <input id="leave" type="button" onclick="closeWin()" value="LEAVE SITE">
-      <!-- <button id="leave" onclick="window.open()">LEAVE SITE</button>  -->
+      <input id="leave" type="button" value="LEAVE SITE" onclick="self.close()">
       <button></button>
-    <button id="proceed" onClick="window.close('','_parent','')">PROCEED, I'M 18+</button>  
+      <!-- <a id="proceed" href="javascript:void(0)">PROCEED, I'M 18+</a>  -->
+      <span class="close-popup" id="proceed">
+        <a href="javascript:void(0)">
+          PROCEED, I'M 18+
+        </a>
+      </span>
     </div>
   </div>
 </div>

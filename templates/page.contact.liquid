@@ -53,10 +53,14 @@
 
         {{ form.errors | default_errors }}
 
-        {% assign name_attr = 'contact.form.name' | t | handle %}
-        <label for="ContactFormName" class="hidden-label">{{ 'contact.form.name' | t }}</label>
-        <input type="text" id="ContactFormName" class="input-full" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.name' | t }}" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+        {% assign name_attr = 'contact.form.fname' | t | handle %}
+        <label for="ContactFormFName" class="hidden-label">{{ 'contact.form.fname' | t }}</label>
+        <input type="text" id="ContactFormFName" class="input-full" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.fname' | t }}" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.fname }}{% endif %}">
 
+        {% assign name_attr = 'contact.form.lname' | t | handle %}
+        <label for="ContactFormLName" class="hidden-label">{{ 'contact.form.lname' | t }}</label>
+        <input type="text" id="ContactFormLName" class="input-full" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.lname' | t }}" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.lname }}{% endif %}">
+        
         <label for="ContactFormEmail" class="hidden-label">{{ 'contact.form.email' | t }}</label>
         <input type="email" id="ContactFormEmail" class="input-full" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
 

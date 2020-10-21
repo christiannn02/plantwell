@@ -8,19 +8,27 @@
     {{ form.errors | default_errors }}
   </div>
   <div class="col-md-6 mb-40">
-    <input type="text" required placeholder="{{ section.settings.name_placeholder }}" class="{% if form.errors contains 'name' %}error{% endif %}" name="contact[name]" id="ContactFormName" value="{% if form.name %}{{ form.name }}{% elsif customer.name %}{{ customer.name }}{% endif %}">
+    <input type="text" required placeholder="{{ section.settings.fname_placeholder }}" class="{% if form.errors contains 'fname' %}error{% endif %}" name="contact[fname]" id="ContactFormFName" value="{% if form.fname %}{{ form.fname }}{% elsif customer.fname %}{{ customer.fname }}{% endif %}">
   </div>
+
+  <div class="col-md-6 mb-40">
+    <input type="text" required placeholder="{{ section.settings.lname_placeholder }}" class="{% if form.errors contains 'lname' %}error{% endif %}" name="contact[lname]" id="ContactFormLName" value="{% if form.lname %}{{ form.lname }}{% elsif customer.lname %}{{ customer.lname }}{% endif %}">
+  </div>
+
   <div class="col-md-6 mb-40">
     <input type="email" required placeholder="{{ section.settings.email_placeholder }}" class="{% if form.errors contains 'email' %}error{% endif %}" name="contact[email]" id="ContactFormEmail" value="{% if form.email %}{{ form.email }}{% elsif customer.email %}{{ customer.email }}{% endif %}">
   </div>
-  <div class="col-lg-12 mb-40">
-    <input type="text" id="ContactFormSubject" name="contact[subject]" placeholder="{{ section.settings.subject_placeholder }}" value="{{ form.subject }}">
+
+  <div class="col-md-6 mb-40">
+    <input type="tel" required placeholder="{{ section.settings.phone_placeholder }}" class="{% if form.errors contains 'phone' %}error{% endif %}" name="contact[phone]" id="ContactFormPhone" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
   </div>
+
   <div class="col-lg-12 mb-40">
     <textarea placeholder="{{ section.settings.message_placeholder }}" class="custom-textarea" name="contact[body]" id="ContactFormMessage">{% if form.body %}{{ form.body }}{% endif %}</textarea>
   </div>
-  <div class="col-lg-12 text-center">
+  <div class="col-lg-12 text-right">
     <button type="submit" value="submit" class="lezada-button lezada-button--medium">{{ section.settings.form_button_name }}</button>
   </div>
 </div>
 {% endform %}
+

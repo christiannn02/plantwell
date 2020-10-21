@@ -4,7 +4,7 @@
   <div class="modal-dialog white-modal modal-md">
     <div class="modal-content">
       <div class="modal-body">
-        <p class="success-message"><i class="fa fa-check-circle"></i>{{ settings.successfull_note }}</p>
+        <p class="success-message"><i class="fa fa-check"></i> {{ settings.successfull_note }}</p>
         <hr>
         <div class="modal-content-text">
           <div class="cart_img_inner">
@@ -25,8 +25,8 @@
         </div>
             <div class="buttons1">
               <hr class="space">
-            <div class="modal-button {% if settings.popup_agree_button_enable %}disabled{% endif %}">
-              <a href="/collections/all" class="lezada-button lezada-button--medium"> {{ settings.continue_shopping }} </a>
+            <div class="modal-button">
+              <a id="c" href="/collections/all" class="lezada-button lezada-button--medium"><i class="fa fa-angle-left"></i> {{ settings.continue_shopping }}</a>
             </div>
             <div class="cart-buttons">
               <a id="a" href="/cart" class="lezada-button lezada-button--medium">{{ settings.view_cart_button2 }}</a>

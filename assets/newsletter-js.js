@@ -61,17 +61,9 @@
 	// 	window.opener = self;
 	// 	window.close();
 	//  });
-	 var myWindow;
-
-	function openWin()
-	{
-	myWindow = window.open("","myWindow","width=200,height=100");
-	myWindow.document.write("<p>This is 'myWindow'</p>");
-	}
-
-	function closeWin(){
- 
-		setTimeout("window.close()", 500);
+	function windowClose() {
+		window.open('','_parent','');
+		window.close();
 		}
 
 })(jQuery);
