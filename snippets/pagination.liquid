@@ -6,13 +6,13 @@
       {% if paginate.previous %}
       <li>
         <a href="{{ paginate.previous.url }}" aria-label="Previous">
-          <span aria-hidden="true">{{ settings.pagination_prev }}</span>
+          <span aria-hidden="true"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
         </a>
       </li>
       {% else %}
       <li class="disabled prev">
         <a href="#">
-          <span>{{ settings.pagination_prev }}</span>
+          <span><i class="fa fa-angle-left" aria-hidden="true"></i></span>
         </a>
       </li>
       {% endif %}
@@ -30,11 +30,11 @@
       {% endif %}
       {% endfor %}
       {% if paginate.next %}
-      <li class="next"><a href="{{ paginate.next.url }}" title="{{ paginate.next.title }}"><span aria-hidden="true">{{ settings.pagination_next }}</span></a></li>
+      <li class="next"><a href="{{ paginate.next.url }}" title="{{ paginate.next.title }}"><span aria-hidden="true"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a></li>
       {% else %}
       <li class="disabled next">
         <a href="#">
-          <span>{{ settings.pagination_next }}</span>
+          <span><i class="fa fa-angle-right" aria-hidden="true"></i></span>
         </a>
       </li>
       {% endif %}

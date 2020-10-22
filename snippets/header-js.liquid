@@ -31,3 +31,8 @@
 {% if content_for_layout contains 'pick_delivery_date' %}
 <script src="{{ 'jquery-ui.min.js' | asset_url }}"></script>
 {% endif %}
+
+{% if content_for_layout contains 'login-form' %}
+<script src="{{ 'password.js' | asset_url }}"></script>
+{% endif %}
+

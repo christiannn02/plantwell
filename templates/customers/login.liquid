@@ -17,6 +17,7 @@
                 <input type="email" name="customer[email]" id="CustomerEmail" class="input-full{% if form.errors contains 'email' %} error{% endif %}" placeholder="{{ 'customer.login.email' | t }}" autocorrect="off" autocapitalize="off" autofocus>
                 {% if form.password_needed %}
                 <input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}" placeholder="{{ 'customer.login.password' | t }}">
+                <i id="pass-status" class="fa fa-eye" aria-hidden="true" onClick="viewPassword()"></i>
                 {% endif %}
                 <div class="login-toggle-btn">
                   <div class="form-action-button">
@@ -25,11 +26,11 @@
                     <a href="#recover" id="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a>
                     {% endif %}
                   </div>
-                  <div class="account-optional-action">
-                    {{ 'layout.customer.create_account' | t | customer_register_link }}
-                  </div>
                 </div>
               </div>
+            </div>
+            <div class="account-optional-action">
+              <p> Don't have an account? {{ 'layout.customer.create_account' | t | customer_register_link }}</p>
             </div>
             {% endform %}
           </div>
@@ -71,4 +72,5 @@
     </div>
   </div>
 </div>
+{% section 'custom-mailchimp_section2' %}
 

@@ -115,6 +115,9 @@
                 <div class="shop-product__short-desc mb-50">
                   {{ product.description }}
                 </div>
+
+                <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+
                 {%- elsif section.settings.product_description_handle == 'short_description' -%}
                 <div class="shop-product__short-desc mb-50">
                   {%- if product.description contains '[short_description]' -%} 

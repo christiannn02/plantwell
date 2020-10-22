@@ -5,7 +5,7 @@
         <div class="login">
           <div class="login-form-container">
             <div class="login-text">
-              <h2>{{ 'customer.register.title' | t }}</h2>
+              <h2>Create an Account</h2>
               {% if settings.register_sub_text != '' %}
               <p>{{ settings.register_sub_text }}</p>
               {% endif %}
@@ -27,18 +27,18 @@
               <input type="password" name="customer[password]" id="CreatePassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}" placeholder="{{ 'customer.register.password' | t }}">
 
               <div class="form-action-button">
-                <button type="submit" class="theme-default-button">{{ 'customer.register.submit' | t }}</button>
+                <button type="submit" class="theme-default-button">Create Account</button>
               </div>
               {% endform %}
-              
-              <div class="account-optional-action">
-              	<a href="{{ shop.url }}">{{ 'customer.register.cancel' | t }}</a>
-              </div>
 
             </div>
+          </div>
+          <div class="account-optional-action">
+            <p>Already have an account? <a href="{{ 'login' }}"> Login</a></p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+{% section 'custom-mailchimp_section2' %}
