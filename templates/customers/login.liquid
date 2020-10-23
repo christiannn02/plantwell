@@ -17,7 +17,7 @@
                 <input type="email" name="customer[email]" id="CustomerEmail" class="input-full{% if form.errors contains 'email' %} error{% endif %}" placeholder="{{ 'customer.login.email' | t }}" autocorrect="off" autocapitalize="off" autofocus>
                 {% if form.password_needed %}
                 <input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}" placeholder="{{ 'customer.login.password' | t }}">
-                <i id="pass-status" class="fa fa-eye" aria-hidden="true" onClick="viewPassword()"></i>
+                <!-- <i id="pass-status" class="fa fa-eye" aria-hidden="true" onClick="viewPassword()"></i> -->
                 {% endif %}
                 <div class="login-toggle-btn">
                   <div class="form-action-button">

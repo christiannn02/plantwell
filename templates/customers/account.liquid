@@ -7,11 +7,10 @@
 
     <hr class="hr--small">
 
-    <div class="grid">
+    <div class="row">
 
-      <div class="grid__item two-thirds medium-down--one-whole">
+      <div class="col-md-8">
         <h2 class="h4">{{ 'customer.orders.title' | t }}</h2>
-
 
         {% comment %}
         If we have past orders, loop through each one
@@ -46,7 +45,13 @@
 
         {% else %}
 
-        <p>{{ 'customer.orders.none' | t }}</p>
+        <div class="no-order-container d-flex flex-column justify-content-center align-items-center mt-35">
+          <div class="empty-orders-img">
+            <img src="//cdn.shopify.com/s/files/1/0448/8436/1379/t/2/assets/empty_order_1920x1080.png?v=12288397226401311028" alt="">
+          </div>
+          <h2 class="mt-30 mb-0">No orders Yet</h2>
+          <p class="mt-20">{{ 'customer.orders.none' | t }}</p>
+        </div>
 
         {% endif %}
         {% if paginate.pages > 1 %}
@@ -58,7 +63,7 @@
         {% endpaginate %}
       </div>
 
-      <div class="grid__item one-third medium-down--one-whole mt-xs-30">
+      <div class="col-md-4">
         <h2 class="h4">{{ 'customer.account.details' | t }}</h2>
 
         <h3 class="h5">{{ customer.name }}</h3>
@@ -100,3 +105,4 @@
     </div>
   </div>
 </div>
+{% section 'custom-mailchimp_section2' %}
