@@ -534,6 +534,14 @@
                     border-bottom: 2px solid #00A651;
                 }
             }
+            #pass-icon {
+                float: right;
+                margin-left: -20px;
+                margin-top: 13px;
+                position: relative;
+                z-index: 2;
+                padding-right: 20px;
+            }
         .login-form {
             background: transparent;
             margin-top: -50px;
@@ -643,6 +651,14 @@
                     &:hover {
                         border-bottom: 2px solid #00A651;
                     }
+                }
+                #pass-icon {
+                    float: right;
+                    margin-left: -20px;
+                    margin-top: 13px;
+                    position: relative;
+                    z-index: 2;
+                    padding-right: 20px;
                 }
                 .theme-default-button {
                     background: #00A651;
@@ -898,5 +914,151 @@
                 }
             }
         }
+
+        .address-box-content {
+            background: #F1FFF8;
+
+            .address-box-header {
+                .col-md-8 {
+                    h3 {
+                        margin-left: 15px;
+                        font-weight: bold;
+                        font-size: 20px;
+                        margin-top: 15px;
+                    }
+                }
+                .address-label-def {
+                    background: #00A651;
+                    border-radius: 6px;
+                    padding: 5px 8px 5px 8px;
+                    font-size: 12px;
+                    color: #fff;
+                }
+
+            .col-md-4 {
+                margin-top: 15px;
+                p {
+                    a {
+                        border: none;
+                        padding: 5px;
+                        color: #000;
+                        font-weight: 300;
+
+                        &:hover {
+                            color: #00A651;
+                            background: none;
+                        }
+                    }
+                }
+            }
+       }
+       .address-info {
+        
+            margin-left: 15px;
+       }
+
+       .edit-address-title {
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 15px;
+       }
+
+       .form-vertical {
+        margin-left: 15px;
+        margin-right: 15px;
+            .theme-default-button {
+                border: 2px solid #00A651;
+                border-radius: 5px;
+                color: #fff;
+                font-weight: 500;
+                background: #00A651;
+                padding: 10px 30px 35px 30px;
+
+                &:hover {
+                    background: transparent;
+                    color: #00A651;
+                }
+            }
+            a {
+                border: 2px solid #00A651;
+                height: 50px;
+                margin-left: 15px;
+                text-align: center;
+                width: 90px;
+                padding: 10px 10px 0px 10px;
+                border-radius: 5px;
+
+                &:hover {
+                    background: #00A651;
+                    color: #fff;
+                }
+            }
+        
+
+        .input-full {
+            border: 2px solid #ddd;
+            &:focus {
+                border: 2px solid #00A651;
+                }
+            }
+        }
+    }
     
+}
+
+#scasl-app-container {
+    #page-header {
+        margin-left: 25%;
+        margin-right: 25%;
+        text-align: center;
+        float: none;
+        margin-top: 40px;
+
+        .bh-sl-title {
+            font-weight: bold;
+            color: #000;
+        }
+}
+    .bh-sl-form-container {
+        #scasl-tab-radius {
+            margin-left: 30%;
+            margin-right: 30%;
+            border: none;
+        }
+        .scasl-address-wrap {
+            #bh-sl-address {
+            width: 100% !important;
+            border: none;
+            border-bottom: 2px solid #00A651;
+            border-radius: 0px;
+            }
+        }
+        .form-input {
+            #scasl-radius-container {
+            border: none;
+            border-bottom: 2px solid #00A651;
+            border-radius: 0px;
+            }
+
+            #scasl-lengthUnit {
+                border: none;
+                border-bottom: 2px solid #00A651;
+                border-radius: 0px;
+            }
+        }
+        .scasl-search-btn {
+            border-top: none;
+           #bh-sl-submit {
+               background: #00A651 !important;
+               border: 2px solid #00A651;
+               height: 45px;
+
+               &:hover {
+                   background: #fff !important;
+                   border: 2px solid #00A651;
+                   color: #00A651;
+               }
+           }
+        }
+    }
 }

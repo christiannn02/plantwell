@@ -53,7 +53,6 @@
 
 		$(".popup_off").on('click', hideMessage);
 		$(".popup_off1").on('click', hideMessage);
-		
 
 	};
 
@@ -61,9 +60,9 @@
 	// 	window.opener = self;
 	// 	window.close();
 	//  });
-	function windowClose() {
-		window.open('','_parent','');
-		window.close();
-		}
+	$('.close').click(function(){
+		$("#one-time-newsletter").modal('toggle');
+		})
+	
 
 })(jQuery);

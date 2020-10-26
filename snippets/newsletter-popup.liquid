@@ -12,6 +12,7 @@
 {%- else -%}
 
 {%- if settings.newsletter_style_handle == 'newsletter_style_1' -%}
+
 <div id="one-time-newsletter" class="newsletter-overlay-area">
   <div class="newsletter-content newsletter-content-bg-1" id="newsletter-content">
 
@@ -41,13 +42,8 @@
       <!-- <a class="btn btn-medium btn-style-1 btn-bordered mt--30 mt-lg--10" href="#">Proceed</a>
       <a id="popup-close" href="#">close</a> -->
       <input id="leave" type="button" value="LEAVE SITE" onclick="self.close()">
-      <button></button>
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       <!-- <a id="proceed" href="javascript:void(0)">PROCEED, I'M 18+</a>  -->
-      <span class="close-popup" id="proceed">
-        <a href="javascript:void(0)">
-          PROCEED, I'M 18+
-        </a>
-      </span>
     </div>
   </div>
 </div>
@@ -220,11 +216,48 @@
 {%- endif -%}
 {%- if settings.dont_show_again_enable -%}
 <script>
-  if(localStorage.getItem("DontShow")) {
-    $("#one-time-newsletter").hide();
-  }
-  $("#forgetMe").on("click", function() {
-    localStorage.setItem("DontShow", "true");
+ 
+
+$("#btn").click(function(){
+   $("#response").animate({
+        height: '+=72px'
+    }, 300);
+  
+  $('<div class="alert alert-success">' +
+    '<button type="button" class="close" data-dismiss="alert">' +
+    '&times;</button>success</div>').hide().appendTo('#response').fadeIn(1000);
+  
+   $(".alert").delay(3000).fadeOut(
+  "normal",
+  function(){
+    $(this).remove();
   });
+  
+  
+  
+  $("#response").delay(4000).animate({
+        height: '-=72px'
+    }, 300);
+
+});
+
+$("#btn-error").click(function(){
+  $("#response").animate({
+        height: '+=72px'
+    }, 300);
+   $('<div class="alert alert-danger">' +
+            '<button type="button" class="close" data-dismiss="alert">' +
+            '&times;</button>Failed</div>').hide().appendTo('#response').fadeIn(1000);
+  
+  $(".alert").delay(3000).fadeOut(
+  "normal",
+  function(){
+    $(this).remove();
+  });
+  
+   $("#response").delay(4000).animate({
+        height: '-=72px'
+    }, 300);
+});
 </script>
 {%- endif -%}

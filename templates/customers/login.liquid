@@ -17,7 +17,7 @@
                 <input type="email" name="customer[email]" id="CustomerEmail" class="input-full{% if form.errors contains 'email' %} error{% endif %}" placeholder="{{ 'customer.login.email' | t }}" autocorrect="off" autocapitalize="off" autofocus>
                 {% if form.password_needed %}
                 <input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}" placeholder="{{ 'customer.login.password' | t }}">
-                <!-- <i id="pass-status" class="fa fa-eye" aria-hidden="true" onClick="viewPassword()"></i> -->
+                <span id="pass-icon" toggle="#CustomerPassword" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                 {% endif %}
                 <div class="login-toggle-btn">
                   <div class="form-action-button">
@@ -74,3 +74,15 @@
 </div>
 {% section 'custom-mailchimp_section2' %}
 
+<script>
+  $(".toggle-password").click(function() {
+
+$(this).toggleClass("fa-eye fa-eye-slash");
+var input = $($(this).attr("toggle"));
+if (input.attr("type") == "password") {
+  input.attr("type", "text");
+} else {
+  input.attr("type", "password");
+}
+});
+</script>

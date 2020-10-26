@@ -25,7 +25,7 @@
 
               <label for="CreatePassword" class="hidden-label">{{ 'customer.register.password' | t }}</label>
               <input type="password" name="customer[password]" id="CreatePassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}" placeholder="{{ 'customer.register.password' | t }}">
-
+              <span id="pass-icon" toggle="#CreatePassword" class="fa fa-fw fa-eye field-icon toggle-password"></span>
               <div class="form-action-button">
                 <button type="submit" class="theme-default-button">Create Account</button>
               </div>
@@ -42,3 +42,16 @@
   </div>
 </div>
 {% section 'custom-mailchimp_section2' %}
+
+<script>
+  $(".toggle-password").click(function() {
+
+$(this).toggleClass("fa-eye fa-eye-slash");
+var input = $($(this).attr("toggle"));
+if (input.attr("type") == "password") {
+  input.attr("type", "text");
+} else {
+  input.attr("type", "password");
+}
+});
+</script>
