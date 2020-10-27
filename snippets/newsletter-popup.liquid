@@ -39,11 +39,8 @@
     <p>{{ settings.newsletter_text }}</p>
     {% endif %}
     <div class="warning-button">
-      <!-- <a class="btn btn-medium btn-style-1 btn-bordered mt--30 mt-lg--10" href="#">Proceed</a>
-      <a id="popup-close" href="#">close</a> -->
-      <input id="leave" type="button" value="LEAVE SITE" onclick="self.close()">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      <!-- <a id="proceed" href="javascript:void(0)">PROCEED, I'M 18+</a>  -->
+     
+       <span class="close">Close</span>
     </div>
   </div>
 </div>
@@ -195,69 +192,12 @@
     $('#one-time-newsletter').firstVisitPopup({
       cookieName : 'index'
     });
+    document.getElementById("close-window").addEventListener("click", function(){ 
+       window.close();
+   });
+
   });
 </script>
 {%- else -%}
-<script>
-  	jQuery(window).on('load', function () {
-    var windows = $(window);
-    var screenSize = windows.width();
-    var newslettershowmobile = {{ settings.newsletter_Show }};
-    if (screenSize >= newslettershowmobile) {
-      setTimeout(function() {
-        $('.popup_wrapper').css({"opacity": "1", "visibility": "visible"});
-        $('.popup_off').click(function(){
-          $(".popup_wrapper").fadeOut(200);
-        })
-      }, 500);	
-    }
-  });
-</script>
-{%- endif -%}
-{%- if settings.dont_show_again_enable -%}
-<script>
- 
+{% endif %}
 
-$("#btn").click(function(){
-   $("#response").animate({
-        height: '+=72px'
-    }, 300);
-  
-  $('<div class="alert alert-success">' +
-    '<button type="button" class="close" data-dismiss="alert">' +
-    '&times;</button>success</div>').hide().appendTo('#response').fadeIn(1000);
-  
-   $(".alert").delay(3000).fadeOut(
-  "normal",
-  function(){
-    $(this).remove();
-  });
-  
-  
-  
-  $("#response").delay(4000).animate({
-        height: '-=72px'
-    }, 300);
-
-});
-
-$("#btn-error").click(function(){
-  $("#response").animate({
-        height: '+=72px'
-    }, 300);
-   $('<div class="alert alert-danger">' +
-            '<button type="button" class="close" data-dismiss="alert">' +
-            '&times;</button>Failed</div>').hide().appendTo('#response').fadeIn(1000);
-  
-  $(".alert").delay(3000).fadeOut(
-  "normal",
-  function(){
-    $(this).remove();
-  });
-  
-   $("#response").delay(4000).animate({
-        height: '-=72px'
-    }, 300);
-});
-</script>
-{%- endif -%}

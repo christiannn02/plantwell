@@ -29,18 +29,15 @@
           {{ form.errors | default_errors }}
 
           <div class="row">
-
             <div class="col-md-6">
               <label for="AddressFirstNameNew">{{ 'customer.addresses.first_name' | t }}</label>
               <input type="text" id="AddressFirstNameNew" class="input-full" name="address[first_name]" value="{{ form.first_name }}" autocapitalize="words">
             </div>
-
             <div class="col-md-6">
               <label for="AddressLastNameNew">{{ 'customer.addresses.last_name' | t }}</label>
               <input type="text" id="AddressLastNameNew" class="input-full" name="address[last_name]" value="{{ form.last_name }}" autocapitalize="words">
             </div>
           </div>
-
           <div class="row">
             <div class="col">
           <label for="AddressCompanyNew">{{ 'customer.addresses.company' | t }}</label>
@@ -69,12 +66,6 @@
               <select id="AddressCountryNew" class="input-full" name="address[country]" data-default="{{ form.country }}">{{ country_option_tags }}</select>
             </div>
           </div>
-          <div class="grid">
-            <div class="col" id="AddressProvinceContainerNew" style="display:none">
-              <label for="AddressProvinceNew">{{ 'customer.addresses.province' | t }}</label>
-              <select id="AddressProvinceNew" class="input-full" name="address[province]" data-default="{{ form.province }}"></select>
-            </div>
-          </div>
           <div class="row">
             <div class="col-md-6">
               <label for="AddressZipNew">{{ 'customer.addresses.zip' | t }}</label>
@@ -85,18 +76,26 @@
               <input type="tel" id="AddressPhoneNew" class="input-full" name="address[phone]" value="{{ form.phone }}">
             </div>
           </div>
+          <div class="grid">
+            <div class="col" id="AddressProvinceContainerNew" style="display:none">
+              <label for="AddressProvinceNew">{{ 'customer.addresses.province' | t }}</label>
+              <select id="AddressProvinceNew" class="input-full" name="address[province]" data-default="{{ form.province }}"></select>
+            </div>
+          </div>
 
           <p class="my-account-checkbox">
             {{ form.set_as_default_checkbox }}
             <label for="address_default_address_new" class="inline">{{ 'customer.addresses.set_default' | t }}</label>
           </p>
 
-          <p><input type="submit" class="theme-default-button submit" value="{{ 'customer.addresses.add' | t }}"></p>
-          <p><a id="a" href="#" onclick="Shopify.CustomerAddress.toggleNewForm(); return false;">{{ 'customer.addresses.cancel' | t }}</a></p>
+          <p class="d-flex">
+            <input type="submit" class="theme-default-button submit" value="{{ 'customer.addresses.add' | t }}">
+            <a id="a" href="#" onclick="Shopify.CustomerAddress.toggleNewForm(); return false;">{{ 'customer.addresses.cancel' | t }}</a></p>
 
           <hr>
         </div>
-        {% endform %}
+      </form>
+      {% endform %}
 
         <!-- <h2>{{ 'customer.addresses.title' | t }}</h2> -->
 
@@ -183,7 +182,6 @@
             <label for="AddressProvince_{{ form.id }}">{{ 'customer.addresses.province' | t }}</label>
             <select id="AddressProvince_{{ form.id }}" class="input-full" name="address[province]" data-default="{{ form.province }}"></select>
           </div>
-
           <div class="row">
     <div class="col-md-6">
               <label for="AddressZip_{{ form.id }}">{{ 'customer.addresses.zip' | t }}</label>
@@ -206,11 +204,12 @@
 
           <hr>
         </div>
-      </form>
+        <input type="hidden" name="_method" value="put"></form>
         {% endform %}
-
         {% endfor %}
-
+      </div>
+        
+        
         {% if paginate.pages > 1 %}
         <hr>
         <div class="pagination">
@@ -218,8 +217,8 @@
         </div>
         {% endif %}
       </div>
-
-    </div>
+  </div>
+</div>
 
     <script>
       // Initialize observers on address selectors
@@ -261,6 +260,5 @@
     {% endpaginate %}
 
   </div>
-</div>
 </div>
 {% section 'custom-mailchimp_section2' %}

@@ -54,15 +54,17 @@
 		$(".popup_off").on('click', hideMessage);
 		$(".popup_off1").on('click', hideMessage);
 
+		$('.close').click(function(){
+			$("#one-time-newsletter").modal('toggle');
+			})
+
 	};
 
 	// $('#leave').on('click', function(){
 	// 	window.opener = self;
 	// 	window.close();
 	//  });
-	$('.close').click(function(){
-		$("#one-time-newsletter").modal('toggle');
-		})
+	
 	
 
 })(jQuery);

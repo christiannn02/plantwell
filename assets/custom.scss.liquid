@@ -59,7 +59,7 @@
 
 .footer-container {
     .copyright-text {
-        width: 348px;
+        width: 355px;
         p {
             width: 100%;
             margin-left: 0px;
@@ -219,6 +219,18 @@
 }
 
 .cart-overlay {
+    .single-cart-product {
+        h3 {
+            font-weight: bold;
+        }
+        a {
+            color: #00A651;
+
+            &:hover {
+                font-weight: bold;
+            }
+        }
+    }
     .cart-buttons {
         a.checkout_btn {
             background: transparent !important;
@@ -422,7 +434,7 @@
         }
     }
     .cart-buttons {
-        margin-left: 50px;
+        margin-left: 47px;
         margin-top: 0px;
 
         a#a {
@@ -902,12 +914,11 @@
         p {
             a#a {
                 border: 2px solid #00A651;
-                padding: 10px 45px 10px 45px;
-                margin-top: -5px;
+                padding: 10px 35px 0px 35px;
                 border-radius: 3px;
                 color: #00A651;
                 font-weight: 500;
-
+                height: 50px;
                 &:hover {
                     background: #00A651;
                     color: #fff;
@@ -1059,6 +1070,84 @@
                    color: #00A651;
                }
            }
+        }
+    }
+}
+
+.wishlist-page {
+    .empty-list--text {
+        font-weight: bold;
+    }
+    p {
+        font-weight: 400;
+        a {
+            color: #00A651;
+            font-weight: 400;
+
+            &:hover {
+               
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.search-overlay {
+    background: #F1FFF8;
+
+    .input-box {
+        form {
+        input {
+            &:focus {
+                border-bottom: 2px solid #00A651;
+                }
+            }
+        }
+    }
+}
+
+.modal-content {
+    .close {
+        i {
+            &:hover {
+            color: #00A651;
+            border-color: #00A651;
+            }
+        }
+    }
+    .qwick-view-content {
+    .product-price {
+        .main {
+            color: #00A651;
+        }
+    }
+}
+    .quickview-btn-cart {
+        .addtocartqv {
+            background: #00A651;
+            border: 2px solid #00A651;
+
+            &:hover {
+                background: transparent;
+                border: 2px solid #00A651;
+                color: #00A651;
+            }
+        }
+    }
+}
+
+.header-bottom-container {
+    .site-nav {
+        .menu-item-has-children {
+            .sub-menu {
+                min-width: 280px;
+                max-width: 320px;
+                max-height: 360px;
+
+                .drop_item {
+                    padding: 10px 30px;
+                }
+            }
         }
     }
 }
