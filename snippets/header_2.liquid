@@ -18,11 +18,15 @@
           <span class="header-separator d-none d-sm-block">|</span>
           {%- endif -%}
           
-
-          
           <div class="order-online-text d-none d-sm-block">
             {{ section.settings.welcome_text_msg }} <a href="{{ section.settings.phone_number_link }}"><span class="number"> {{ section.settings.welcome_text_phone_number}}</span></a>
           </div>
+
+          <span class="header-separator">|</span>
+            <div class="top-social-icons">
+              {% include 'social-midea' %}
+            </div>
+          
         </div>
         
         <div class="header-top-right  {% unless section.settings.social_media_enable == true %} without_social {% endunless %}">
@@ -83,7 +87,10 @@
         <div class="header-bottom-navigation">
           <div class="site-main-nav d-none d-lg-block">
             <nav class="site-nav center-menu">
+              {% for link in linklists[header_right_menu].links %}
+              <li class="{% if link.active %}current{% endif %}"><a href="{{ link.url }}">{{ link.title }}</a></li>
                 {%- include 'main-menu' -%}
+                {% endfor %}
             </nav>
           </div>
         </div>

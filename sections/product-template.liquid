@@ -9,7 +9,7 @@
 {%- assign current_variant = product.selected_or_first_available_variant -%}
 {%- assign lezadaSettings = section.settings -%}
 
-<div class="shop-page-wrapper {% if settings.breadcrumb_banner_enable -%} mt-100 mt-sm-80 {%- endif -%}" id="product-details-with-gallery" itemscope itemtype="http://schema.org/Product" data-section="BannerSection">
+<div class="shop-page-wrapper {% if settings.breadcrumb_banner_enable -%} mt-30 mt-sm-80 {%- endif -%}" id="product-details-with-gallery" itemscope itemtype="http://schema.org/Product" data-section="BannerSection">
   <meta itemprop="name" content="{{ product.title }}">
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
   <meta itemprop="image" content="{{ product.featured_image.src | img_url: '800x' }}">

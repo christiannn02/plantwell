@@ -1,10 +1,20 @@
 .header {
+    .header-bottom-navigation {
+        li {
+            .current {
+                background: #000000;
+                color: #ffffff;
+              }
+            }
+    }
     .header-top {
         background: #F0FAF5;
     }
     .header-bottom {
+        
         margin-bottom: 60px;
         border-bottom: 1px solid #dedede;
+        
             .site-nav {
                 margin-left: -7rem;
                 margin-right: -10rem;
@@ -77,16 +87,21 @@
 
     .logo {
         margin-bottom: 10px;
+        .theme-logo {
+            img {
+                min-width: 130px;
+            }
+        }
     }
 
     .col {
         .widget-title {
-            padding-left: 170px;
+            padding-left: 165px;
             padding-right: 0px;
             margin-left: -100px;
         }
         .footer-nav-container {
-            padding-left: 170px;
+            padding-left: 165px;
             padding-right: 0px;
             margin-left: -100px;
             color: #E2E4E3;
@@ -183,10 +198,43 @@
 
     .warning-button {
         margin-top: 10px;
+
+        .two {
+            border: 2px solid #f51414 !important;
+            color: #f51414 !important;
+            font-weight: 500 !important;
+            background: transparent !important;
+
+            &:hover {
+                background: #f51414 !important;
+                color: #fff !important;
+            }
+        }
+
+        .close {
+            border: 2px solid #00A651;
+            background: #00A651;
+            border-radius: 5px;
+            padding: 10px 20px 10px 20px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 18px;
+            text-align: center;
+            float: none;
+            opacity: 1;
+            text-shadow: 0 0 black;
+            margin-left: 10px;
+
+            &:hover {
+                background:transparent;
+                color: #00A651;
+            }
+        }
     }
 
         p {
-            margin-top: -50px;
+            margin-top: -40px;
+            margin-bottom: 30px;
         }
     #proceed {
         background: #00a651;
@@ -1150,4 +1198,43 @@
             }
         }
     }
+}
+
+#your-shopping-cart {
+    .empty_cart_title {
+        background: #f1fff8;
+        color: #00A651;
+    }
+}
+
+.template-product {
+    .header {
+        margin-top: 100px;
+    }
+    .featured-image {
+        cursor: default;
+    }
+    margin-top: -100px;
+    .breadcrumb-area {
+        background: none;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-top: -20px;
+
+        .breadcrumb-title {
+            display: none;
+        }
+}
+}
+
+.main-menu-links {
+    .active {
+        color: #fff;
+        background: #000;
+    }
+}
+
+.pdf {
+    margin-left: 285px;
+    margin-right: -150px;
 }

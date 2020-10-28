@@ -16,7 +16,7 @@
     {%- capture verticalAlign -%}
     {% if isset.vertical_content == "start" %} align-items-start {% elsif isset.vertical_content == "center" %} align-items-center {% elsif isset.vertical_content == "end" %} align-items-end {% endif %}
     {%- endcapture -%}
-    <div class="row pdf {{ verticalAlign }}">
+    <div class="row {{ verticalAlign }}">
       {% for block in section.blocks %}
       {% case block.type %}
       {% when 'html_content' %}
@@ -222,54 +222,6 @@
           ]
        },
 	   {
-          "type": "image_content",
-          "name": "Image Content",
-          "settings": [
-			{
-			  "type": "range",
-			  "id": "content_column",
-			  "min": 1,
-			  "max": 12,
-			  "step": 1,
-			  "label": "Content Column",
-			  "unit": "/12",
-			  "default": 6
-			},
-			{
-			  "type": "range",
-			  "id": "content_column_md",
-			  "min": 1,
-			  "max": 12,
-			  "step": 1,
-			  "label": "Tablet Content Column",
-			  "unit": "/12",
-			  "default": 6
-			},
-            {
-			  "type": "url",
-			  "id": "image_content_image_url",
-			  "label": "URL"
-			},
-			{
-			  "type": "html",
-			  "id": "html_content_css",
-			  "label": "HTML Content CSS",
-			  "default": "a"
-			},
-			{
-              "type":  "radio",
-              "id":    "text_align",
-              "label": "Image Align",
-              "options": [
-                { "value": "left", "label": "Left" },
-                { "value": "right", "label": "Right" },
-                 { "value": "center", "label": "Center" }
-              ],
-              "default":   "center"
-            }
-          ]
-       },
-	   {
           "type": "section_padding",
           "name": "Section Padding",
 		  "limit": 1,
@@ -448,14 +400,11 @@
 	],
 	"presets": [
 		{
-		  "name": "Custom Content",
-		  "category": "others",
+		  "name": "Custom HTML Content",
+		  "category": "Custom Sections",
 		  "blocks":[
 				{
 					"type": "html_content"
-				},
-				{
-					"type": "image_content"
 				},
 				{
 					"type": "section_padding"

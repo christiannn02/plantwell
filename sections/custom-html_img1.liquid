@@ -16,7 +16,7 @@
     {%- capture verticalAlign -%}
     {% if isset.vertical_content == "start" %} align-items-start {% elsif isset.vertical_content == "center" %} align-items-center {% elsif isset.vertical_content == "end" %} align-items-end {% endif %}
     {%- endcapture -%}
-    <div class="row {{ verticalAlign }}">
+    <div class="row pdf {{ verticalAlign }}">
       {% for block in section.blocks %}
       {% case block.type %}
       {% when 'html_content' %}
@@ -30,25 +30,6 @@
         {{ block.settings.html_content_css }}
       </style>
       {%- endif -%}
-      {% when 'image_content' %}
-      <div class="col-lg-{{ block.settings.content_column }} col-md-{{ block.settings.content_column_md }} col-xs-12" {{ block.shopify_attributes }}>
-        <div class="image-content {% if block.settings.text_align == "left" %}text-left {% elsif block.settings.text_align == "right" %} text-right {% elsif block.settings.text_align == "center" %} text-center {% endif %}">
-          {% if block.settings.image_content_image != blank and block.settings.image_content_image_url != blank %}
-          <a href="{{ block.settings.image_content_image_url }}">
-            <img src="{{ block.settings.image_content_image | img_url: 'master' }}" alt="{{ block.settings.image_content_image.alt }}">
-          </a>
-          {% elsif block.settings.image_content_image != blank %}
-          <img src="{{ block.settings.image_content_image | img_url: 'master' }}" alt="{{ block.settings.image_content_image.alt }}">
-          {% else %}
-          <img src="https://dummyimage.com/800x500/eeeeee/000000.jpg&text=Image+Content" alt="image">
-          {% endif %}
-        </div>
-        {%- if block.settings.html_content_css != '' -%}
-        <style>
-          {{ block.settings.html_content_css }}
-        </style>
-        {%- endif -%}
-      </div>
       {% endcase %}
       {% endfor %}
     </div>
@@ -75,9 +56,11 @@
     }
   }
 </style> 
+
+
 {% schema %}
   {
-    "name": "Custom HTML Image",
+    "name": "Custom Content",
     "settings": [
 		{
 		  "type": "header",
@@ -189,6 +172,55 @@
             }
 	],
 	"blocks":[
+		{
+          "type": "html_content",
+          "name": "HTML Content",
+          "settings": [
+			{
+			  "type": "range",
+			  "id": "content_column",
+			  "min": 1,
+			  "max": 12,
+			  "step": 1,
+			  "label": "Content Column",
+			  "unit": "/12",
+			  "default": 6
+			},
+			{
+			  "type": "range",
+			  "id": "content_column_md",
+			  "min": 1,
+			  "max": 12,
+			  "step": 1,
+			  "label": "Tablet Content Column",
+			  "unit": "/12",
+			  "default": 6
+			},
+            {
+			  "type": "html",
+			  "id": "html_content",
+			  "label": "HTML Content",
+			  "default": "<div class='html-content-class'><h2>Custom Content Title</h2><p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p></div>"
+			},
+			{
+			  "type": "html",
+			  "id": "html_content_css",
+			  "label": "HTML Content CSS",
+			  "default": ".html-content-class{margin-top: 100px;}.html-content-class h2{margin-bottom: 20px;}"
+			},
+			{
+              "type":  "radio",
+              "id":    "text_align",
+              "label": "Section Title Align",
+              "options": [
+                { "value": "left", "label": "Left" },
+                { "value": "right", "label": "Right" },
+                 { "value": "center", "label": "Center" }
+              ],
+              "default":   "left"
+            }
+          ]
+       },
 	   {
           "type": "image_content",
           "name": "Image Content",
@@ -214,11 +246,6 @@
 			  "default": 6
 			},
             {
-			  "type": "image_picker",
-			  "id": "image_content_image",
-			  "label": "Image"
-			},
-            {
 			  "type": "url",
 			  "id": "image_content_image_url",
 			  "label": "URL"
@@ -227,7 +254,7 @@
 			  "type": "html",
 			  "id": "html_content_css",
 			  "label": "HTML Content CSS",
-			  "default": ".image-content img{max-width: 100%;margin: auto;}"
+			  "default": "a"
 			},
 			{
               "type":  "radio",
@@ -421,11 +448,11 @@
 	],
 	"presets": [
 		{
-		  "name": "Custom HTML Image1",
-		  "category": "Custom Sections",
+		  "name": "Custom Content",
+		  "category": "others",
 		  "blocks":[
 				{
-					"type": "image_content"
+					"type": "html_content"
 				},
 				{
 					"type": "section_padding"
@@ -435,3 +462,4 @@
 	]
   }
 {% endschema %}
+

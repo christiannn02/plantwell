@@ -1,5 +1,5 @@
 {% if section.settings.footer_section_enable == true %}
-<div class="{% if section.settings.section_snow_effect %}snow--section-effect {% endif %} footer-container footer-one pt-100 pb-50 pt-sm-80 pb-sm-30 {% if section.settings.footer_overlay %} footer_overlay {% endif %}" id="section-{{ section.id }}">
+<div class="{% if section.settings.section_snow_effect %}snow--section-effect {% endif %} footer-container footer-one pt-50 pb-50 pt-sm-80 pb-sm-30 {% if section.settings.footer_overlay %} footer_overlay {% endif %}" id="section-{{ section.id }}">
    <div class="{% if section.settings.container_width == 'container' %} container {% elsif section.settings.container_width == 'fluid' %} container wide {% endif %}">
     <div class="row">
 
@@ -11,7 +11,7 @@
         <div class="logo">
           {%- if block.settings.logo -%}
           <a href="/" class="theme-logo">
-            <img src="{{ block.settings.logo | img_url: '95x95' }}" alt="{{ block.settings.logo.alt | default: shop.name }}">
+            <img src="{{ block.settings.logo | img_url: '130x130' }}" alt="{{ block.settings.logo.alt | default: shop.name }}">
 
           </a>
           {%- else -%}
