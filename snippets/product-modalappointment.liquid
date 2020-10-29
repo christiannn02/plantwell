@@ -1,0 +1,89 @@
+<div class="modal fade appointmentModal" id="quickViewModal1" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+     
+      <div class="appoint-btn">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="fa fa-times"></i>
+        </button>
+      </div>
+        <div class="row">
+
+      <div class="modal-body">
+          <div class="try">
+              <div class="qwick-view-content">
+                <h1>Book a Virtual Appointment</h1>
+                <h4>Talk to us through a Zoom call. Schedule an Appointment now.</h4>
+            {% form 'contact' %}
+                <div class="row">
+                  <div class="col-12">
+                    {% if form.posted_successfully? %}
+                    <div class="note form-success">
+                    <h5>Appointment Request Sent!</h5>
+                    <p>We will notify you through your email about the other details of your appointment.</p>
+                    </div>
+                    {% endif %}
+                    {{ form.errors | default_errors }}
+                  </div>
+                  <div class="col-md-6 mb-40">
+                    <input type="text" required placeholder="First Name" class="{% if form.errors contains 'fname' %}error{% endif %}" name="contact[fname]" id="ContactFormFName" value="{% if form.fname %}{{ form.fname }}{% elsif customer.fname %}{{ customer.fname }}{% endif %}">
+                  </div>
+                
+                  <div class="col-md-6 mb-40">
+                    <input type="text" required placeholder="Last Name" class="{% if form.errors contains 'lname' %}error{% endif %}" name="contact[lname]" id="ContactFormLName" value="{% if form.lname %}{{ form.lname }}{% elsif customer.lname %}{{ customer.lname }}{% endif %}">
+                  </div>
+                
+                  <div class="col-md-6 mb-40">
+                    <input type="email" required placeholder="Email Address" class="{% if form.errors contains 'email' %}error{% endif %}" name="contact[email]" id="ContactFormEmail" value="{% if form.email %}{{ form.email }}{% elsif customer.email %}{{ customer.email }}{% endif %}">
+                  </div>
+                
+                  <div class="col-md-6 mb-40">
+                    <input type="tel" required placeholder="Phone Number" class="{% if form.errors contains 'phone' %}error{% endif %}" name="contact[phone]" id="ContactFormPhone" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+                  </div>
+
+                  <div class="col-md-6 mb-40">
+                    <input type="date" required placeholder="Preferred date of appointment" class="{% if form.errors contains 'date' %}error{% endif %}" name="contact[date]" id="ContactFormDate" value="{% if form.date %}{{ form.date }}{% elsif customer.date %}{{ customer.date }}{% endif %}">
+                  </div>
+
+                  <div class="col-md-6 mb-40">
+                    <input type="time" required placeholder="Preferred time of appointment" class="{% if form.errors contains 'time' %}error{% endif %}" name="contact[time]" id="ContactFormTime" value="{% if form.time %}{{ form.time }}{% elsif customer.time %}{{ customer.time }}{% endif %}">
+                  </div>
+                
+                  <div class="col-lg-12 mb-40">
+                    <textarea placeholder="Message" class="{% if form.errors contains 'body' %}error{% endif %}" name="contact[body]" id="ContactFormMessage" value="{% if form.body %}{{ form.body }}{% elsif customer.body %}{{ customer.body }}{% endif %}"></textarea>
+                  </div>
+                  <div class="col-lg-12 text-right">
+                    <button type="submit" value="submit" class="lezada-button lezada-button--medium" data-toggle="modal" data-target="#success_tic">SEND APPOINTMENT REQUEST</button>
+                  </div>
+                </div>
+                {% endform %}
+                  <script>
+                    jQuery('.addtocartqv').click(function(e) {
+                      e.preventDefault();
+                      Shopify.addItemFromFormStart('add-item-qv', jQuery(this).attr('id'));
+                    });
+                  </script> 
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>  
+  var mainImage = '';
+  jQuery(function ($) {
+                      function selectGrid(_parent) {
+                        setTimeout(timeout, 5);
+                        function timeout() {
+                          if(jQuery(_parent + " .selector-wrapper").length > 2){
+                            jQuery(_parent + " .single-option-selector").addClass("select--wd");
+                          } else if(jQuery(_parent + " .selector-wrapper").length == 1){
+                            jQuery(_parent + " .single-option-selector").before("<label>{{ product.options.first }}</label>");
+                                                                                jQuery(_parent + " .single-option-selector").addClass("select--wd");
+                          }
+                        }
+                      };
+                    });
+</script>

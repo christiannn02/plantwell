@@ -56,6 +56,8 @@ Template-specific js
 {%- if settings.product_quickview_enalbe -%}
 {% include 'product-quickview' %}
 
+{% include 'product-modalappointment' %}
+
 <script>
   $(".cart-plus-minus").prepend('<div class="dec qtybutton">-</div>');
   $(".cart-plus-minus").append('<div class="inc qtybutton">+</div>');

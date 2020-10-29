@@ -127,6 +127,8 @@
 
             <!--=======  End of single-icon  =======-->
             <!--=======  single-icon  =======-->
+            <span class="quickview">
+              <a data-toggle="modal" data-target="#quickViewModal" href="javascript:void(0);" onclick="quiqview('{{ product.handle | handleize }}')"  data-tippy-content="{{ settings.product_quick_view_title }}" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "{% if settings.rtl_enable %}right{% else %}left{% endif %}"  ><i class="ion-ios-search-strong"></i></a></span>
 
             {% if section.settings.wishlist_enable %}
             <div class="single-icon wishlist">

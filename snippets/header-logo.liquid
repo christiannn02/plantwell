@@ -7,7 +7,7 @@
        {%- endif -%}    
        >
   {% if section.settings.header_transparent == true and section.settings.sticky_logo != blank %}
-  <img  src="{{ section.settings.sticky_logo | img_url: '300x300' }}" alt="{{ section.settings.logo.alt | default: shop.name }}"
+  <img  src="{{ section.settings.sticky_logo | img_url: '180x60' }}" alt="{{ section.settings.logo.alt | default: shop.name }}"
        {%- if section.settings.ratina_logo_enable -%}
        srcset="{{ section.settings.sticky_logo | img_url: logo_size }} 1x, {{ section.settings.sticky_logo | img_url: logo_size, scale: 2 }} 2x"
        {%- endif -%}      

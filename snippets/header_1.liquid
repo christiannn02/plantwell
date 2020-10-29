@@ -22,6 +22,13 @@
           <div class="order-online-text d-none d-sm-block">
             {{ section.settings.welcome_text_msg }} <a href="{{ section.settings.phone_number_link }}"><span class="number"> {{ section.settings.welcome_text_phone_number}}</span></a>
           </div>
+         <div class="spacer ml-10 mr-10">
+           <p> | </p>
+         </div>
+          <div class="store-locator-btn">
+            <i class="fa fa-map-pin"></i> <a href="/pages/store-locator/"><span class="text">Store Locator</span></a>
+          </div>
+
         </div>
         
         <div class="header-top-right  {% unless section.settings.social_media_enable == true %} without_social {% endunless %}">
@@ -90,6 +97,9 @@
         <div class="header-right-container">
           <div class="header-right-icons d-flex justify-content-end align-items-center h-100">
             <!--=======  single-icon  =======-->
+
+            <span class="appointment w-100">
+              <a data-toggle="modal" data-target="#quickViewModal1" href="javascript:void(0);" onclick="quiqview('{{ product.handle | handleize }}')"  data-tippy-content="Set an Appointment" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "{% if settings.rtl_enable %}right{% else %}left{% endif %}"  >BOOK AN APPOINTMENT</a></span>
 
             {% if section.settings.search_bar_enable %}
             <div class="single-icon search">
