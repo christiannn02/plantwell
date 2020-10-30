@@ -18,14 +18,17 @@
             .site-nav {
                 margin-left: -7rem;
                 margin-right: -10rem;
+
                 ul {
                      li {
+                         border-top: none;
                          a {
                         margin: -10px;
                         font-size: 16px;
                         style: normal;
                         line-height: 26px;
                         font-weight: 400px;
+
                     }
                 }
             }
@@ -111,6 +114,9 @@
                 border: none;
             }
             }
+        .footer-social-links {
+            margin-left: -130px;
+        }
         }
     hr {
         border-top: 1px solid #dedede;
@@ -781,6 +787,14 @@
     padding-top: 100px;
     padding-bottom: 100px;
     margin-top: -60px;
+
+    .breadcrumb-list {
+        li {
+            &:after {
+                content: ">";
+            }
+        }
+    }
 }
 
 .shop-product {
@@ -816,6 +830,9 @@
     .tab-content {
         margin-left: 70px;
         color: #000;
+        .spr-starratings {
+            color: #f5cc26;
+        }
         p {
             margin-right: 50px;
         }
@@ -1123,6 +1140,13 @@
 }
 
 .wishlist-page {
+    .login-wishlist {
+        .theme-default-button {
+            background: #00A651;
+            font-weight: 500;
+            border-radius: 5px;
+        }
+    }
     .empty-list--text {
         font-weight: bold;
     }
@@ -1399,3 +1423,118 @@
     }
 }
 
+.decor-slider-wrapper {
+    .slick-arrow {
+        color: #000 !important;
+
+        &:hover {
+            color: #00A651 !important;
+        }
+    }
+}
+
+.shop-product {
+    .shop-product__description-tab {
+        .tab-product-navigation {
+            border-bottom: 1px solid #dedede;
+            .nav-tabs {
+            .active {
+                font-weight: 600;
+                color: #00A651 !important;
+                border-bottom: 3px solid #00A651;
+                }
+            }
+        }
+    }
+}
+
+.spr-container {
+    .spr-header {
+        .spr-header-title {
+            font-style: normal !important;
+            font-weight: bold !important;
+            font-size: 32px !important;
+            line-height: 40px !important;
+            color: #101820;
+        }
+        .spr-summary {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 26px;
+            color: #3f4448;
+
+            .spr-starrating {
+                color: #f5cc26;
+            }
+
+            .spr-summary-caption {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 26px;
+                color: #3f4448;
+            }
+            .spr-summary-actions-newreview {
+                color: #fff !important;
+                background: #00A651 !important;
+                border-radius: 5px !important;
+                border: 2px solid #00A651 !important;
+                font-style: normal !important;
+                font-weight: 600 !important;
+                line-height: 21px !important;
+                text-align: center !important;
+                padding: 15px 25px !important;
+
+                &:hover {
+                    border: 2px solid #00A651 !important;
+                    background: transparent;
+                    color: #00A651 !important;
+                }
+            }
+
+        }
+    }
+    .spr-content {
+        .spr-form {
+            .spr-reviews {
+                .spr-review {
+                    .spr-review-header {
+                        .spr-starratings {
+                            color: #f5cc26;
+                            .spr-icon-star {
+                                color: #f5cc26;
+                            }
+                        }
+                    }
+                }
+            }
+            .spr-form-review {
+                .spr-form-review-rating {
+                    a {
+                        &:before {
+                            color: #00A651;
+                        }
+                    }
+                }
+            }
+            .spr-button {
+                color: #fff !important;
+                background: #00A651 !important;
+                border-radius: 5px !important;
+                border: 2px solid #00A651 !important;
+                font-style: normal !important;
+                font-weight: 600 !important;
+                line-height: 21px !important;
+                text-align: center !important;
+                padding: 15px 25px !important;
+            }
+        }
+    }
+}
+
+.ion-ios-arrow-thin-right {
+    &:before {
+        font-weight: bold;
+    }
+}
