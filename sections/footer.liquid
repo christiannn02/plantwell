@@ -11,7 +11,7 @@
         <div class="logo">
           {%- if block.settings.logo -%}
           <a href="/" class="theme-logo">
-            <img src="{{ block.settings.logo | img_url: '130x130' }}" alt="{{ block.settings.logo.alt | default: shop.name }}">
+            <img src="{{ block.settings.logo | img_url: '100x100' }}" alt="{{ block.settings.logo.alt | default: shop.name }}">
 
           </a>
           {%- else -%}
@@ -374,7 +374,7 @@
                 "type": "text",
                 "id": "newsletter_input_placeholder",
                 "label": "Placeholder Title",
-                "default": "Your email address."
+                "default": "Your email address"
               }
           ]
        },

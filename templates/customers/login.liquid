@@ -9,9 +9,8 @@
             <div class="login-form-container">
               <div class="login-text">
                 <h2>{{ 'customer.login.title' | t }}</h2>
-                {%- if settings.login_sub_text != '' -%}
-                <p>{{ settings.login_sub_text }}</p>
-                {%- endif -%}
+                <p>Please login using account details below.
+                </p>
               </div>
               <div class="login-form">
                 <input type="email" name="customer[email]" id="CustomerEmail" class="input-full{% if form.errors contains 'email' %} error{% endif %}" placeholder="{{ 'customer.login.email' | t }}" autocorrect="off" autocapitalize="off" autofocus>
@@ -21,7 +20,7 @@
                 {% endif %}
                 <div class="login-toggle-btn">
                   <div class="form-action-button">
-                    <button type="submit" class="theme-default-button">{{ 'customer.login.sign_in' | t }}</button>
+                    <button type="submit" class="theme-default-button">LOGIN</button>
                     {% if form.password_needed %}
                     <a href="#recover" id="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a>
                     {% endif %}

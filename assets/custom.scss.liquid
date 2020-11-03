@@ -27,8 +27,23 @@
                         font-size: 16px;
                         style: normal;
                         line-height: 26px;
-                        font-weight: 400px;
+                        font-weight: 500;
+                        color: #000;
 
+                        .menu-item-has-children {
+                            ul {
+                                li {
+                                &:hover {
+                                border-bottom: 1px solid #000;
+                                    }
+                                }
+                            }
+                        }
+
+                        &:before {
+                            color: #000;
+                            font-wright: 500;
+                        }
                     }
                 }
             }
@@ -38,6 +53,19 @@
 
 .product-carousel-container {
     margin-top: 150px;
+    .col-9 {
+        margin-top: -100px;
+    }
+    .absolute {
+        margin-top: -120px;
+        margin-left: 100px;
+    }
+    .section_title_spacing {
+        margin-top: -130px;
+    }
+    .single-product__image {
+        border: 2px solid #dedede;
+    }
     .lezada-loadmore-button {
         color: #00a651;
         border: 2px solid #00A651;
@@ -45,6 +73,7 @@
         padding-left: 30px;
         padding-right: 30px;
         border-radius: 3px;
+        font-weight: 700;
 
         &:hover {
             color: #fff;
@@ -80,6 +109,12 @@
             line-height: 30px;
             color: gray;
             margin-top: 5px;
+
+            a {
+                &:hover {
+                    color: #00A651 !important;
+                }
+            }
         }
     }
     .payments-logo {
@@ -92,7 +127,8 @@
         margin-bottom: 10px;
         .theme-logo {
             img {
-                min-width: 130px;
+                min-width: 100px;
+                max-width: 100px;
             }
         }
     }
@@ -149,6 +185,16 @@
 }
 
 .video-section-area {
+    .position-absolute {
+        margin-top: -125px;
+        margin-left: -50px;
+    }
+    .absolute {
+        position: absolute;
+        margin-top: 280px;
+        margin-left: 490px;
+    }
+
     .lezada-button {
         padding-right: 30px;
         padding-left: 30px;
@@ -167,6 +213,10 @@
 }
 
 .banner-area {
+    .position-absolute {
+        margin-top: -70px;
+        margin-left: 115px;
+    }
     .banner-box {
         .banner-title-1 {
             text-align:left;
@@ -192,7 +242,7 @@
 .newsletter-content {
     padding: 10px 10px 10px 10px;
     text-align: center;
-    height: 20rem;
+    height: 23rem;
     max-width: 30rem;
 
     .warning-logo {
@@ -201,10 +251,13 @@
         margin-top: 30px;
         margin-bottom: 30px;
     }
-
+    h3 {
+        font-size: 30px;
+        font-weight: bold;
+        font-family: "DM Sans" !important;
+    }
     .warning-button {
-        margin-top: 10px;
-
+        margin-top: 50px;
         .two {
             border: 2px solid #f51414 !important;
             color: #f51414 !important;
@@ -627,7 +680,7 @@
                         cursor: pointer;
                     }
 
-                    .theme-default-button {
+                    .theme-default-button{
                         background: #00A651;
                         color: #fff;
                         float: right;
@@ -639,6 +692,13 @@
                             background: #022915;
                         }
                     }
+                }
+            }
+            #RecoverPassword {
+                color: #00A651;
+
+                &:hover {
+                    color: #007bff;
                 }
             }
         }
@@ -670,6 +730,38 @@
 
                 &:hover {
                     color: #0056b3;
+                }
+            }
+        }
+    }
+}
+
+.login {
+    #RecoverPasswordForm {
+        .login-form-container {
+            .login-form {
+                .login-toggle-btn {
+                    .form-action-button {
+                        .theme-default-button {
+                            background: #00A651;
+                            color: #fff;
+                            text-transform: uppercase;
+                            font-weight: 500;
+                            border-radius: 3px;
+    
+                            &:hover {
+                                background: #022915;
+                            }
+                        }
+                        #HideRecoverPasswordLink {
+                            color: #00A651;
+                            font-weight: 500;
+
+                            &:hover {
+                                color: #007bff;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -733,6 +825,7 @@
                         text-transform: uppercase;
                         font-weight: 500;
                         border-radius: 3px;
+                        height: 45px;
 
                         &:hover {
                             background: #022915;
@@ -1269,7 +1362,7 @@
             width: 200px !important;
            
             a {
-            color: #7e7e7e;
+            color: #000;
             border-top: 2px solid #fff;
             font-weight: 500;
 
@@ -1278,6 +1371,30 @@
                     color: #000 !important;
                     font-weight: 500;
                 }
+            }
+        }
+        .search {
+            border-bottom: 2px solid #fff;
+            &:hover {
+                border-bottom: 2px solid #00A651;
+            }
+        }
+        .user-login {
+            border-bottom: 2px solid #fff;
+            &:hover {
+                border-bottom: 2px solid #00A651;
+            }
+        }
+        .wishlist {
+            border-bottom: 2px solid #fff;
+            &:hover {
+                border-bottom: 2px solid #00A651;
+            }
+        }
+        .cart {
+            border-bottom: 2px solid #fff;
+            &:hover {
+                border-bottom: 2px solid #00A651;
             }
         }
 
@@ -1431,6 +1548,12 @@
             color: #00A651 !important;
         }
     }
+    .lezada-button {
+        padding: 13px 30px;
+        font-size: 13px;
+        font-weight: 700;
+        border-radius: 5px;
+    }
 }
 
 .shop-product {
@@ -1536,5 +1659,21 @@
 .ion-ios-arrow-thin-right {
     &:before {
         font-weight: bold;
+    }
+}
+
+.about-us {
+    .position-absolute {
+        margin-top: 120px;
+        margin-left: 50px;
+}
+    .absolute {
+        float: right;
+        margin-top: -630px;
+        margin-right: 105px;
+    }
+    .one {
+        margin-top: 315px;
+        margin-left: 190px;
     }
 }
