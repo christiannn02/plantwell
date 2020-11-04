@@ -371,6 +371,25 @@
 }
 
 .shopping-cart-area {
+    .cart-table-container {
+        .cart-table {
+            tr {
+                text-align: center;
+                text-transform: capitalize;
+            }
+            tbody {
+                tr {
+                    td {
+                        text-align: center;
+
+                        .product-remove {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
     .remove-btn{
         text-align: right;
        
@@ -382,8 +401,10 @@
             border-bottom: 2px solid #fff !important;
             padding: 2px;
             margin-right: 10px;
-            font-size: 12px;
+            font-size: 15px;
             text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 500;
 
             &:hover {
                 color: #00A651 !important;
@@ -407,6 +428,8 @@
             color: #00A651 !important;
             background: transparent;
             border-radius: 3px;
+            height: 55px;
+            font-weight: bold;
 
             &:hover {
                 background: #00A651;
@@ -424,6 +447,8 @@
             color: #00A651 !important;
             background: transparent;
             border-radius: 3px;
+            padding: 14px 30px;
+            font-weight: bold;
 
             &:hover {
                 background: #00A651;
@@ -439,6 +464,8 @@
             color: #fff;
             text-transform: uppercase;
             border-radius: 3px;
+            padding: 15px 30px;
+            font-weight: 600;
 
             &:hover {
                 background: transparent !important;
@@ -450,6 +477,8 @@
     }
     .cart-table {
         td.product-remove {
+            float: right;
+            margin-right: 60px;
             a{
                 &:hover {
                   color: #00A651;
@@ -769,6 +798,9 @@
 }
 
 .customer-page {
+    .one {
+        margin-left: -105px;
+    }
     .login {
         .login-form-container {
             .login-text {
@@ -844,6 +876,10 @@
                     color: #0056b3;
                 }
             }
+        }
+        .two {
+            margin-left: 850px;
+            margin-top: -185px;
         }
     }
 }
@@ -1029,6 +1065,10 @@
                 }
             }
         }
+        .one {
+            margin-left: 290px;
+            margin-top: 200px;
+        }
         
     }
 
@@ -1189,10 +1229,19 @@
         }
 }
     .bh-sl-form-container {
+        .one {
+            margin-top: -100px;
+            margin-left: -35px;
+        }
         #scasl-tab-radius {
             margin-left: 30%;
             margin-right: 30%;
             border: none;
+
+            .two {
+                margin-left: 845px;
+                margin-top: -120px;
+            }
         }
         .scasl-address-wrap {
             #bh-sl-address {
@@ -1521,6 +1570,51 @@
     }
 }
 
+.contact-form-area {
+    .lezada-form {
+        #ContactFormFName{
+            &:hover {
+                border-bottom: 2px solid #00A651;
+            }
+            &:focus {
+                border-bottom: 2px solid #00A651;
+            }
+        }
+        #ContactFormLName{
+            &:hover {
+                border-bottom: 2px solid #00A651;
+            }
+            &:focus {
+                border-bottom: 2px solid #00A651;
+            }
+        }
+        #ContactFormEmail{
+            &:hover {
+                border-bottom: 2px solid #00A651;
+            }
+            &:focus {
+                border-bottom: 2px solid #00A651;
+            }
+        }
+        #ContactFormPhone{
+            &:hover {
+                border-bottom: 2px solid #00A651;
+            }
+            &:focus {
+                border-bottom: 2px solid #00A651;
+            }
+        }
+        #ContactFormMessage{
+            &:hover {
+                border-bottom: 2px solid #00A651;
+            }
+            &:focus {
+                border-bottom: 2px solid #00A651;
+            }
+        }
+    }
+}
+
 .header-top {
     .spacer {
         color: #d8d8d8;
@@ -1675,5 +1769,92 @@
     .one {
         margin-top: 315px;
         margin-left: 190px;
+    }
+}
+
+.contact-us {
+    .one {
+        margin-top: -75px;
+    }
+    .two {
+        margin-left: 1150px;
+        margin-top: -60px;
+    }
+    .three {
+        margin-top: -215px;
+        margin-left: 110px;
+    }
+}
+
+#faq {
+.faq-page {
+    .two {
+        margin-left: 1295px;
+        margin-top: -250px;
+        }
+    }
+}
+
+.covid19-page {
+    .one {
+        margin-top: 100px;
+    }
+    .two {
+        margin-left: 1200px;
+        margin-top: -515px;
+    }
+}
+
+.resources-page {
+    .one {
+        margin-top: 50px;
+    }
+    .two {
+        margin-left: 1270px;
+        margin-top: 360px;
+    }
+    .three {
+        margin-top: -525px;
+        margin-left: 75px;
+    }
+}
+
+.single-product__image {
+    border: 2px solid #dedede;
+}
+.single-product__content {
+    .price {
+        .discounted-price {
+            font-size: 17px;
+        }
+    }
+}
+
+.product-page {
+    .one {
+        margin-top: -350px;
+    }
+    .two {
+        margin-left: 1285px;
+        margin-top: -745px;
+    }
+}
+
+.section section--shipping-method {
+.section__header {
+    font-weight: bold;
+    }
+}
+
+.breadcrumb-area {
+    .breadcrumb-title {
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+    .breadcrumb-list {
+        li {
+            font-size: 20px;
+            text-transform: capitalize;
+        }
     }
 }
