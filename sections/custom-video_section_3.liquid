@@ -31,9 +31,9 @@
                 </svg>
             </div>
             {% if section.settings.logo_2 %}
-            <figure class="mb--30 mb-md--20 max-w-100">
+            <div class="mb--30 mb-md--20 max-w-100">
               <img src="{{ section.settings.logo_2 | img_url: '300x300' }}" alt="{{ section.settings.logo_2.alt | default: shop.name }}">
-            </figure>
+            </div>
             {% endif %}
             {%- if section.settings.about_title != '' -%}
             <h1 class="heading-secondary mb--40 mb-md--20">{{ section.settings.about_title }}</h1>

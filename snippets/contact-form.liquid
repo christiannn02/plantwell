@@ -16,7 +16,7 @@
   </div>
 
   <div class="col-md-6 mb-40">
-    <input type="email" required placeholder="{{ section.settings.email_placeholder }}" class="{% if form.errors contains 'email' %}error{% endif %}" name="contact[email]" id="ContactFormEmail" value="{% if form.email %}{{ form.email }}{% elsif customer.email %}{{ customer.email }}{% endif %}">
+    <input type="email" required placeholder="Email Address" class="{% if form.errors contains 'email' %}error{% endif %}" name="contact[email]" id="ContactFormEmail" value="{% if form.email %}{{ form.email }}{% elsif customer.email %}{{ customer.email }}{% endif %}">
   </div>
 
   <div class="col-md-6 mb-40">

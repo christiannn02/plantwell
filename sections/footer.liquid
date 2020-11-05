@@ -81,7 +81,33 @@
               {% endif %}
             </ul>
           </nav>
+
         </div>
+      </div>
+      <div id="content-mobile">
+        <ul>
+          <li><a href="/pages/about-us/">About Us</a></li>
+          <li><a href="/pages/contact-us/">Contact Us</a></li>
+          <li><a href="/pages/terms-and-conditions/">Terms and Conditions</a></li>
+          <li><a href="/pages/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/pages/faq/">FAQ</a></li>
+        </ul>
+
+        <div class="social-logo1">
+          <a class="instagram" href = "#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          <a class="facebook" href = "#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+          <a class="twitter" href = "#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+
+        <div class="payments-logo">
+          <i class="fa fa-cc-visa" aria-hidden="true"></i>
+          <i class="fa fa-cc-mastercard" aria-hidden="true"></i>
+          <i class="fa fa-cc-paypal" aria-hidden="true"></i>
+        </div>
+        <div class="copyright-text1">
+          <p>Copyright © 2020 Plantwell. All Rights Reserved. Powered by <a href="http://leentechsystems.com/">LEENtech Network Solutions, Inc.</a></p>
+       </div>
+
       </div>
 
       {% when 'newsletter' %}
@@ -131,10 +157,10 @@
           {%- endif -%}
         </div>
       </div>
-
-
       {% endcase %}
-      {% endfor %}
+      {% endfor %}  
+      <span class="appointment">
+        <a data-toggle="modal" data-target="#quickViewModal1" href="javascript:void(0);" onclick="quiqview('{{ product.handle | handleize }}')"  data-tippy-content="Set an Appointment" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme = "sharpborder" data-tippy-placement = "{% if settings.rtl_enable %}right{% else %}left{% endif %}"  >Book an Appointment</a></span>
     </div>
     <hr>
     <div class="social-logo">
