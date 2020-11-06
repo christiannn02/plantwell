@@ -44,7 +44,7 @@
               <div class="login-form">
                 <input type="email" name="customer[email]" id="CustomerEmail" class="input-full{% if form.errors contains 'email' %} error{% endif %}" placeholder="{{ 'customer.login.email' | t }}" autocorrect="off" autocapitalize="off" autofocus>
                 {% if form.password_needed %}
-                <input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}" placeholder="{{ 'customer.login.password' | t }}">
+                <input type="password" value="" name="customer[password]" id="CustomerPassword" minlength="6" class="input-full{% if form.errors contains 'password' %} error{% endif %}" placeholder="{{ 'customer.login.password' | t }}">
                 <span id="pass-icon" toggle="#CustomerPassword" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                 {% endif %}
                 <div class="login-toggle-btn">

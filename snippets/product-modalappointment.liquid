@@ -38,7 +38,7 @@
                   </div>
                 
                   <div class="col-md-6 mb-40">
-                    <input type="tel" required placeholder="Phone Number" class="{% if form.errors contains 'phone' %}error{% endif %}" name="contact[phone]" id="ContactFormPhone" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+                    <input type="tel" required placeholder="Phone Number" class="{% if form.errors contains 'phone' %}error{% endif %}" name="contact[phone]" id="ContactFormPhone" pattern="[0-9\-]*" minlength="7" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
                   </div>
 
                   <div class="col-md-6 mb-40">
@@ -50,7 +50,7 @@
                   </div>
                 
                   <div class="col-lg-12 mb-40">
-                    <textarea placeholder="Message" class="{% if form.errors contains 'body' %}error{% endif %}" name="contact[body]" id="ContactFormMessage" value="{% if form.body %}{{ form.body }}{% elsif customer.body %}{{ customer.body }}{% endif %}"></textarea>
+                    <textarea required placeholder="Message" class="{% if form.errors contains 'body' %}error{% endif %}" name="contact[body]" id="ContactFormMessage" value="{% if form.body %}{{ form.body }}{% elsif customer.body %}{{ customer.body }}{% endif %}"></textarea>
                   </div>
                   <div class="col-lg-12 text-right">
                     <button type="submit" value="submit" class="lezada-button lezada-button--medium" data-toggle="modal" data-target="#success_tic">SEND APPOINTMENT REQUEST</button>

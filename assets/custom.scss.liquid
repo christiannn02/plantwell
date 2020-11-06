@@ -137,12 +137,12 @@
 
     .col {
         .widget-title {
-            padding-left: 165px;
+            padding-left: 120px;
             padding-right: 0px;
             margin-left: -100px;
         }
         .footer-nav-container {
-            padding-left: 165px;
+            padding-left: 120px;
             padding-right: 0px;
             margin-left: -100px;
             color: #E2E4E3;
@@ -157,14 +157,20 @@
         }
         }
         .appointment {
-                margin-left: 465px;
-                margin-top: -73px;
+                margin-left: 419px;
+                margin-top: -35px;
                 font-weight: 500;
-                color: #fff;
-
+                color: #e2e4e3;
                 &:hover {
-                    text-decoration: underline;
-                    color: #00A651;
+                    text-decoration: underline !important;
+                }
+                a {
+                    &:hover {
+                        color: #00A651 !important;
+                    }
+                }
+                @media screen and (max-width: 600px) {
+                    display: none;
                 }
             }   
     hr {
@@ -199,8 +205,8 @@
 
 .video-section-area {
     .position-absolute {
-        margin-top: -125px;
-        margin-left: -50px;
+        margin-top: -105px;
+        margin-left: -90px;
     }
     .absolute {
         position: absolute;
@@ -211,17 +217,23 @@
     .lezada-button {
         padding-right: 30px;
         padding-left: 30px;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 15px;
+        padding-bottom: 15px;
         border-radius: 3px;
+        margin-top: 30px;
     }
     .text-block {
         p {
-            line-height: 35px;
+            line-height: 30px;
+            font-size: 13px;
         }
         h1 {
             font-weight: bold;
+            margin-top: -110px;
         }
+    }
+    .order-1 {
+        padding-right: 45px;
     }
 }
 
@@ -672,7 +684,43 @@
         padding-right: 2px;
 }
 
+#reset-account {
+    .login-form {
+        background: transparent;
+
+        input {
+            background: transparent;
+            border-bottom: 2px solid #dedede;
+
+            &:hover {
+                border-bottom: 2px solid #00A651;
+            }
+            &:focus {
+                border-bottom: 2px solid #00A651;
+            }
+        }
+
+        .theme-default-button{
+            background: #00A651;
+            color: #fff;
+            float: right;
+            text-transform: uppercase;
+            font-weight: 500;
+            border-radius: 3px;
+
+            &:hover {
+                background: #022915;
+            }
+        }
+    }
+}
+
 .login {
+    #RecoverPasswordForm {
+        .login-form {
+            background: transparent;
+        }
+    }
     #CustomerLoginForm {
         .login-form-container {
             background: #F1FFF8;
@@ -1079,18 +1127,54 @@
             }
         }
         .one {
-            margin-left: 290px;
-            margin-top: 200px;
+            margin-left: 313px;
+            margin-top: -220px;
         }
         
     }
 
     .col-md-8 {
+        background: #F0FAF5;
+            .full {
+                thead {
+                    background: transparent;
+
+                    tr {
+                        th {
+                            border: none;
+                            text-align: center;
+                            border-bottom: 2px solid #b1b5b4;
+                            color: #7e8483;
+                            font-weight: 500;
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        td {
+                            border: none;
+                            text-align: center;
+                            border-bottom: 1px solid #b1b5b4;
+                            padding: 15px;
+
+                            a {
+                                color: #00A651;
+                                font-weight: 500;
+
+                                &:hover {
+                                    color: #000;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         h2 {
             font-weight: 600 !important;
             font-size: 24px !important;
             line-height: 34px !important;
             color: #101820 !important;
+            margin-top: 20px;
         }
     }
 }
@@ -1773,6 +1857,18 @@
 }
 
 .about-us {
+    .html-content-class {
+        margin-top: 50px;
+        strong {
+            font-weight: 600;
+        }
+        p {
+            font-size: 14px;
+        }
+        .core {
+            margin-left: -35px;
+        }
+    }
     .position-absolute {
         margin-top: 120px;
         margin-left: 50px;
@@ -1841,7 +1937,7 @@
 .single-product__content {
     .price {
         .discounted-price {
-            font-size: 17px;
+            font-size: 19px;
         }
     }
 }
@@ -1911,6 +2007,9 @@
         .section_title_spacing {
             margin-top: -100px;
         .section-title {
+            .subtitle {
+                font-size: 14px;
+            }
         p {
             font-size: 12px;
                 }
@@ -2353,3 +2452,94 @@
         }
     }   
 }
+
+.template-order {
+    .my-account-page {
+        .container {
+            p {
+                a {
+                    color: #000;
+                    font-weight: bold;
+                    font-size: 25px;
+                    border: 2px solid #00A651;
+                    padding: 10px;
+                    border-radius: 5px;
+
+                    &:hover {
+                        color: #00A651;
+                    }
+                }
+            }
+        }
+    }
+    .two-thirds {
+        background: #f1fff8;
+        margin-bottom: 10px;
+
+        .order-title {
+            font-size: 30px;
+            font-weight: 700;
+            color: #00A651;
+        }
+        .order-date {
+
+        }
+        thead {
+            background: transparent;
+            tr {
+                th {
+                    text-align: center !important;
+                    border: none;
+                    border-bottom: 2px solid #dedede;
+                }
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    border: none;
+                    border-bottom: 1px solid #dedede;
+                    text-align: center !important;
+                    padding: 20px;
+                    font-weight: 400;
+
+                    a {
+                        &:hover {
+                        color: #00A651;
+                        }
+                    }
+                }
+            }
+        }
+        tfoot {
+            tr {
+                td {
+                    text-align: left !important;
+                    border: none;
+                    border-bottom: 1px solid #dedede;
+                    color: #00A651;
+                    font-weight: bold;
+                }
+                .text-right {
+                    text-align: center !important;
+                }
+                strong {
+                    color: #000 !important;
+                }
+            }
+        }
+    }
+    .one-third {
+        h2 {
+            font-weight: bold;
+            font-size: 25px;
+        }
+    }
+}
+
+.newsletter content {
+    @media screen and (max-width: 600px) {
+        display: block;
+    }
+}
+
