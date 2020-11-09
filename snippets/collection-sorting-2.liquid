@@ -70,7 +70,7 @@
 
     {% assign showing_title = section.settings.showing_title_handle | split: "|" %}
     <div class="showing_result">{{ showing_title | slice: 0 }} 
-      {{ paginate.current_offset | plus: 1 }} - {{ paginate_final }} 
+    <span class="show-result1">{{ paginate.current_offset | plus: 1 }} - {{ paginate_final }}</span>
       {{ showing_title | slice: 1 }} 
       {{ paginate.items }} 
       {{ showing_title | slice: 2 }} 

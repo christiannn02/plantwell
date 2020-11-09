@@ -20,7 +20,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="shop-product">
-          <div class="row pb-100 pb-md-85 pb-sm-65">
+          <div class="row pb-50 pb-md-85 pb-sm-65">
             <div class="{% if section.settings.product_thumnail_type == 'vertical_mode' %} col-xl-6 {% endif %}  {% if section.settings.product_sidebar_enable %} col-xl-4 col-lg-4 {% else %} col-lg-6 {% endif %} mb-md-70 mb-sm-70">
               
              {%- if section.settings.product_thumnail_type == 'vertical_mode' -%}
@@ -174,7 +174,7 @@
                 {%- else -%}
                 
                 <div class="shop-product__block shop-product__block--quantity mb-40">
-                  <div class="shop-product__block__title">{{ 'products.product.quantity' | t }}: </div>
+                  <div class="shop-product__block__title">{{ 'products.product.quantity' | t }} </div>
                   <div class="shop-product__block__value">
                     <div class="pro-qty d-inline-block mx-0 pt-0">
                       <input type="text" name="quantity"  value="1">

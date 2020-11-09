@@ -100,7 +100,7 @@
                   {%- endif -%}
                   
                   <div class="cart-calculation-button {% if section.settings.check_term_condtion %}{% endif %} text-center">
-				  <button type="submit" class="lezada-button1 lezada-button--medium checkout_btn" name="checkout">{{ section.settings.checkout_button_title }}</button>
+				  <button type="submit" class="lezada-button1 lezada-button--medium checkout_btn" name="checkout">PROCEED TO CHECKOUT <strong style="font-size: 20px; font-weight: bold;">→</strong></button>
                   		</div>
 				</div>
                 </div>
@@ -118,7 +118,7 @@
             <img src="{% if section.settings.empty_cart_img != blank %}{{ section.settings.empty_cart_img | img_url: 'master' }} {% else %}  https://cdn.shopify.com/s/files/1/0132/3116/1408/files/cart.png?13612 {% endif %}" alt="{{ section.settings.empty_cart_img.alt }}" >
           </div>
           <h5 class="mb-30">{{ section.settings.cart_empty_title }}</h5>
-          <p><a class="lezada-button lezada-button--small" href="/collections/all"><i class="fa fa-angle-left" aria-hidden="true"></i> {{ section.settings.cart_continue_title }}</a></p>
+          <p><a class="lezada-button lezada-button--small" href="/collections/all"><i class="fa fa-angle-left" aria-hidden="true"></i> CONTINUE SHOPPING</a></p>
         </div>
       </div>
     </div>
