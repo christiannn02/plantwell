@@ -5,7 +5,17 @@
     <div class="row">
       <div class="col-lg-12 {% if settings.text_align == "left" %}text-left {% elsif settings.text_align == "right" %} text-right {% elsif settings.text_align == "center" %} text-center {% endif %}">
         {%- if settings.page_title_enable -%}
-        <h1 class="breadcrumb-title">{{ page_title }}</h1>
+            {% if page_title == "Create Account" %}
+              <h1 class="breadcrumb-title">Create an Account</h1>
+              {% elsif page_title == "Your Shopping Cart" %}
+              <h1 class="breadcrumb-title">Your Cart</h1>
+              {% elsif page_title == "wishlist" %}
+              <h1 class="breadcrumb-title">Wishlist</h1>
+              {% elsif page_title == "Store Locator - Plantwell US" %}
+              <h1 class="breadcrumb-title">Store Locator</h1>
+            {% else %}
+              <h1 class="breadcrumb-title">{{ page_title }}</h1>
+            {% endif %}
         {%- endif -%}
         {%- if settings.breadcrumb_enable -%}
         {%- include 'breadcrumb-builtin' -%}

@@ -8,19 +8,19 @@
     {{ form.errors | default_errors }}
   </div>
   <div class="col-md-6 mb-40">
-    <input type="text" required placeholder="{{ section.settings.fname_placeholder }}" class="{% if form.errors contains 'fname' %}error{% endif %}" name="contact[fname]" id="ContactFormFName" value="{% if form.fname %}{{ form.fname }}{% elsif customer.fname %}{{ customer.fname }}{% endif %}">
+    <input type="text" required placeholder="{{ section.settings.fname_placeholder }}" class="{% if form.errors contains 'fname' %}error{% endif %}" name="contact[fname]" id="ContactFormFName" minlength="2" maxlength="20" value="{% if form.fname %}{{ form.fname }}{% elsif customer.fname %}{{ customer.fname }}{% endif %}">
   </div>
 
   <div class="col-md-6 mb-40">
-    <input type="text" required placeholder="{{ section.settings.lname_placeholder }}" class="{% if form.errors contains 'lname' %}error{% endif %}" name="contact[lname]" id="ContactFormLName" value="{% if form.lname %}{{ form.lname }}{% elsif customer.lname %}{{ customer.lname }}{% endif %}">
+    <input type="text" required placeholder="{{ section.settings.lname_placeholder }}" class="{% if form.errors contains 'lname' %}error{% endif %}" name="contact[lname]" id="ContactFormLName" minlength="2" maxlength="20" value="{% if form.lname %}{{ form.lname }}{% elsif customer.lname %}{{ customer.lname }}{% endif %}">
   </div>
 
   <div class="col-md-6 mb-40">
-    <input type="email" required placeholder="Email Address" class="{% if form.errors contains 'email' %}error{% endif %}" name="contact[email]" id="ContactFormEmail" value="{% if form.email %}{{ form.email }}{% elsif customer.email %}{{ customer.email }}{% endif %}">
+    <input type="email" required placeholder="Email Address" class="{% if form.errors contains 'email' %}error{% endif %}" name="contact[email]" id="ContactFormEmail" oninvalid="setCustomValidity('Please enter a valid Email Address.')" value="{% if form.email %}{{ form.email }}{% elsif customer.email %}{{ customer.email }}{% endif %}">
   </div>
 
   <div class="col-md-6 mb-40">
-    <input type="tel" required placeholder="{{ section.settings.phone_placeholder }}" class="{% if form.errors contains 'phone' %}error{% endif %}" name="contact[phone]" id="ContactFormPhone" pattern="[0-9\-]*" minlength="7" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+    <input type="tel" required placeholder="{{ section.settings.phone_placeholder }}" class="{% if form.errors contains 'phone' %}error{% endif %}" name="contact[phone]" id="ContactFormPhone" pattern="[0-9\-]*" minlength="7" maxlength="12" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
   </div>
 
   <div class="col-lg-12 mb-40">

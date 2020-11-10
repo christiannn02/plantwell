@@ -54,9 +54,17 @@
 
       {% else %}
 
-
-      <span>{{ page_title }}</span>
-
+      {% if page_title == "Create Account" %}
+        <span>Create an Account</span>
+      {% elsif page_title == "Your Shopping Cart" %}
+        <span>Your Cart</span>
+        {% elsif page_title == "wishlist" %}
+        <span>Wishlist</span>
+      {% elsif page_title contains "Store Locator - Plantwell US" %}
+        <span>Store Locator</span>
+      {% else %}
+        <span>{{ page_title }}</span>
+      {% endif %}
       {% endif %}
     </li>
   </ul>

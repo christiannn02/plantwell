@@ -4,39 +4,62 @@
   <div class="modal-dialog white-modal modal-md">
     <div class="modal-content">
       <div class="modal-body">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="modal-message-holder">
         <p class="success-message"><i class="fa fa-check"></i> Product successfully added to your shopping cart.</p>
-        <hr>
-        <div class="modal-content-text">
-          <div class="cart_img_inner">
-            <div class="popup_img_inner">
-              <img class="popupimage" src="">
+      </div>
+    </div>
+    <div class="col-md-2">
+    <div class="modal-close-btn">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="ion-android-close"></i></button>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="row mb-35">
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-4">
+        <img class="popupimage" src="">  
             </div>
-          <div class="popup-image">
+        <div class="col-md-8">
+            <h5 class="productmsg"></h5>
+            <p>
+              <span class="pop_current_price"> </span>
+            </p>
           </div>
         </div>
-            <div class="content_inner">
-              <h6 class="productmsg"></h6>
-<!--                 <span class="pop_current_price"> </span> -->
             </div>
-          <div class="popup-content">
+            <div class="col-md-6 d-flex justify-content-center align-items-center popup-content">
+              <div class="modal-total-price">
             <p class="total_item"> {{ settings.total_cart_before_title }} <span class="cart_count bigcounter">{{ cart.item_count }}</span> {{ settings.total_cart_after_title }}</p>
             <p class="cart_total"> <span class="total_price_label">{{ settings.total_price_label }} </span> <span class="shopping-cart__total">{{ cart.total_price | money }}</span></p>
           </div>
         </div>
-            <div class="buttons1">
-              <hr class="space">
-            <div class="modal-button">
-              <a id="c" href="/collections/all" class="lezada-button lezada-button--medium"><i class="fa fa-angle-left"></i> {{ settings.continue_shopping }}</a>
+      </div>
+      <hr>
+      <div class="modal-action-btn">
+        <div class="row">
+          <div class="col-md-4 popup-holder">
+            <button type="button" class="popup-cont" data-dismiss="modal" aria-hidden="true"><i class="fa fa-angle-left" aria-hidden="true"></i> {{ settings.continue_shopping }}</button>
+                </div>
+                <div id="content-mobile">
+                  <hr>
+                </div>
+                <div class="col-md-8">
+                  <div class="row">
+                    <div class="col-md-6 pt-xs-20">
+                      <a href="/cart" class="a w-100">{{ settings.view_cart_button2 }}</a>
+                    </div>
+                    <div class="col-md-6 pt-xs-20">
+                      <a href="/checkout" class="b w-100">{{ settings.checkout_button2 }}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="cart-buttons">
-              <a id="a" href="/cart" class="lezada-button lezada-button--medium">{{ settings.view_cart_button2 }}</a>
-              <a id="b" href="/checkout" class="lezada-button lezada-button--medium popup-checkout--btn">{{ settings.checkout_button2 }}</a>
-            </div>
-            </div>
-            </div>
-        </div>
-        <div class="modal-close">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times-circle"></i></button>
+          </div>
         </div>
       </div>
     </div>

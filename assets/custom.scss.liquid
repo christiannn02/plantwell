@@ -68,6 +68,13 @@
     .single-product__image {
         border: 2px solid #dedede;
     }
+    .product-cart-action {
+        .cart-title {
+            &:hover {
+                color: #000;
+            }
+        }
+    }
     .lezada-loadmore-button {
         color: #00a651;
         border: 2px solid #00A651;
@@ -577,6 +584,9 @@
 }
 
 .modal {
+    #content-mobile{
+        display: none;
+    }
     .cart_img_inner {
        flex: 0 0 15%;
     }
@@ -585,6 +595,8 @@
         text-align: left;
         .productmsg {
             font-size: 12px;
+            margin-left: 10px;
+            margin-right: 5px;
         }
     }
     .popup-content {
@@ -593,7 +605,8 @@
         padding: 20px 0 0 0;
 
         p.total_item {
-            font-size: 10px;
+            font-size: 12px;
+            text-transform: lowercase;
         }
         p.cart_total {
             font-weight: bold;
@@ -607,9 +620,9 @@
             }
         }
     }
-    .modal-button {
+    .modal-action-btn {
         flex: 0 0 36%;
-       a#c {
+       .popup-holder {
         margin: 0;
         padding: 0;
         cursor: pointer;
@@ -619,46 +632,49 @@
         padding: 10px 0 0 0;
         border: none;
         color: gray !important;
+        font-size: 17px;
+        font-weight: 600;
 
         &:hover {
             color: #00A651 !important;
         }
+        i {
+            font-size: 20px;
+            margin-left: 10px;
+            font-weight: bold;
         }
-    }
-    .buttons1 {
-        display: flex;
-        flex-wrap: wrap;
-        height: 85px;
-
-        hr.space {
-            flex: 0 0 100%;
-        }
-    }
-    .cart-buttons {
-        margin-left: 47px;
-        margin-top: 0px;
-
-        a#a {
-            border: 1px solid #00A651;
+        } 
+        .a {
+            border: 2px solid #00A651;
             background: transparent;
             color: #00A651 !important;
-            border-radius: 3px;
+            border-radius: 5px;
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            font-size: 20px;
 
             
         &:hover {
-            color: #000 !important;
+            color: #fff !important;
+            background: #00A651;
+            border-bottom: 2px solid #00A651;
              }
         }
 
-        a#b {
-            margin-left: 20px;
+        .b {
             background: #00A651;
-            border: 1px solid #00A651;
+            border: 2px solid #00A651;
             border-radius: 3px;
-
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
             
         &:hover {
-            color: #000 !important;
+            color: #00A651 !important;
+            background: transparent;
             }
         }
     }
@@ -1021,6 +1037,11 @@
 
     .breadcrumb-list {
         li {
+            a {
+                &:hover {
+                    color: #000;
+                }
+            }
             &:after {
                 content: ">";
             }
@@ -1597,8 +1618,13 @@
 }
 
 .appointmentModal {
+    #content-mobile {
+        display: none;
+    }
     .modal-content {
         width: 645px;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .appoint-btn {
@@ -1719,21 +1745,46 @@
     }
     @media screen and (max-width: 600px) {
         .modal-content {
-            width: 350px;
+            width: 375px;
 
             .qwick-view-content {
                 h1 {
-                    font-size: 15px;
+                    font-size: 20px;
                 }
                 h4 {
-                    font-size: 9px;
+                    font-size: 13px;
                 }
+            }
+            #ContactFormDate {
+                display: none;
+            }
+            #ContactFormTime {
+                display: none;
+            }
+            #content-mobile {
+                display:block;
+                margin-top: -85px;
+            #ContactFormDate1 {
+                border: none;
+                background: transparent;
+                border-bottom: 2px solid #dedede;
+                font-size: 13px;
+                width: 300px;
+                }
+                #ContactFormTime1 {
+                    border: none;
+                    background: transparent;
+                    border-bottom: 2px solid #dedede;
+                    font-size: 13px;
+                    width: 300px;
+                    }
             }
         }
         .row {
             .lezada-button {
                 padding: 12px 10px;
                 font-size: 10px;
+                float: left;
             }
         }
     }
@@ -1823,6 +1874,28 @@
 .shop-product {
     .shop-product__description-tab {
         border-top: none;
+
+        .tab-content {
+            ul {
+                list-style-type: none;
+                padding-left: 0;
+                li {
+                    list-style-type: none;
+                    position: relative;
+                    padding-left: 1.5em;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        left: 0; 
+                        width: 1em;
+                        height: 1em;
+                        background: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='utf-8'?><svg width='18' height='18' viewBox='0 0 1792 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z'/></svg>") no-repeat;
+                        margin-top: 12px;
+                    }
+                }
+            }
+        }
         .tab-product-navigation {
             border-bottom: 1px solid #dedede;
             .nav-tabs {
@@ -1959,6 +2032,12 @@
 }
 
 .contact-us {
+    #content-mobile {
+        display: none;
+    }
+    #content-desktop {
+        display: block;
+    }
     .one {
         margin-top: -75px;
     }
@@ -1970,6 +2049,18 @@
         margin-top: -215px;
         margin-left: 110px;
     }
+    .single-icon-box {
+        svg {
+            margin-top: -20px;
+            margin-right: -5px;
+        }
+        .icon-box-content {
+            .content {
+                font-size: 14px;
+                margin-top: -8px;
+                }
+            }
+        }
 }
 
 #faq {
@@ -2034,13 +2125,11 @@
 
 .breadcrumb-area {
     .breadcrumb-title {
-        text-transform: capitalize;
         font-weight: bold;
     }
     .breadcrumb-list {
         li {
             font-size: 20px;
-            text-transform: capitalize;
         }
     }
 }
@@ -2135,7 +2224,7 @@
             display: none;
         }
         .image-box {
-            margin-top: 25px;
+            margin-top: 60px;
         .lazyload {
             width: 375px;
             margin-top: 8px;
@@ -2144,7 +2233,7 @@
         }
     }
         .heading-secondary {
-            margin-top: -373px !important;
+            margin-top: -377px !important;
             text-align: center;
         }
         .font-2 {
@@ -2329,11 +2418,46 @@
 
 .contact-us {
     @media screen and (max-width: 600px) {
+        #content-desktop{
+            display: none;
+        }
+        #content-mobile {
+            display: block;
+        }
+        .contact-form-area {
+            margin-top: -55px;
+        }
         .section-title {
-            .subtitle {
-                font-size: 9px;
-                font-weight: 300;
+            margin-top: -65px;
+            h1 {
+                strong {
+                    font-size: 30px !important;
+                }
             }
+            .subtitle {
+                margin-bottom: -30px;
+                c {
+                font-size: 11px !important;
+                font-weight: 300;
+                }
+            }
+        }
+        .single-icon-box {
+            margin-bottom: -25px!important;
+            margin-top: -15px;
+            .icon-box-content {
+                .title {
+                    strong {
+                        font-size: 15px !important;
+                    }
+                }
+                .content {
+                    font-size: 13px;
+                }
+            }
+        }
+        .box-layout-map-container {
+            margin-top: -30px;
         }
         .one {
             display: none;
@@ -2401,7 +2525,7 @@
         .breadcrumb-area {
             .breadcrumb-list {
                 li {
-                    font-size: 14px;
+                    font-size: 8px;
                 }
             }
         }
@@ -2452,13 +2576,27 @@
 
 #modalAddToCart {
     @media screen and (max-width: 600px) {
-        .cart_img_inner {
-            display: none;
-        }
+    #content-mobile {
+        display: block;
+        flex: 0 0 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
         .modal-body {
             .success-message {
                 font-size: 11px;
             }
+            .modal-close-btn {
+                margin-top: -25px;
+            }
+        }
+        .popup-content {
+            flex: 0 0 100%;
+        }
+        .popup-holder {
+            margin-left: 20px;
+            margin-right: 20px;
+            text-align: center;
         }
         .content_inner {
             .productmsg {
@@ -2731,17 +2869,20 @@
 
 @media screen and (max-width: 600px) {
     .breadcrumb-area {
-        background-size: 400px 200px;
+        background-size: 410px 130px;
         height: 0px;
+        margin-top: -94px;
+        background-color: transparent;
+        margin-bottom: -25px;
 
         .breadcrumb-title {
-            font-size: 25px;
+            font-size: 23px;
             margin-bottom: 5px;
             margin-top: -40px;
         }
         .breadcrumb-list {
             li {
-                font-size: 15px;
+                font-size: 13px;
             }
         }
     }
@@ -2779,6 +2920,9 @@
             width: 220px !important;
             margin-left: -50px !important;
         }
+        #scapl-geocode-btn {
+            margin-right: -55px !important;
+        }
         #scasl-radius-container {
             width: 225px !important;
             margin-left: -50px !important;
@@ -2803,6 +2947,59 @@
             li {
                 .active {
                     background: #00A651;
+                }
+            }
+        }
+    }
+}
+
+.shop-page-header {
+    .filter-icons {
+        .grid-icons {  
+            a {
+                border: 3px solid #fff;
+                padding: 1px;
+
+            &:hover {
+                border-bottom: 2px solid #00A651;
+                }
+                &:focus {
+                border-bottom: 2px solid #00A651;
+                }
+            }
+            .active {
+                border: 3px solid #00A651;
+                padding: 1px;
+            }
+        }
+    }
+}
+
+.shop-product-wrap {
+    .single-product {
+        .product-cart-action {
+            .cart-title {
+                &:hover {
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+
+#AddToCartForm {
+    .shop-product__description {
+        .shop-product__title {
+            #popup_cart_title {
+                font-weight: 800;
+            }
+        }
+
+        .shop-product__block {
+            .shop-product__block__value {
+                .pro-qty {
+                    font-size: 35px;
+                    font-weight: 500;
                 }
             }
         }
