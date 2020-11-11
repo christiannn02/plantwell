@@ -16,11 +16,6 @@
 <div id="one-time-newsletter" class="newsletter-overlay-area">
   <div class="newsletter-content newsletter-content-bg-1" id="newsletter-content">
 
-    <span class="close-icon" id="newsletter-popup-close-icon">
-      <a href="javascript:void(0)">
-        <i class="ion-android-close"></i>
-      </a>
-    </span>
     <div class="warning-logo">
       <svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M23.7762 8.625H45.2237L60.375 23.7762V45.2237L45.2237 60.375H23.7762L8.625 45.2237V23.7762L23.7762 8.625ZM42.8375 54.625L54.625 42.8375V26.1625L42.8375 14.375H26.1625L14.375 26.1625V42.8375L26.1625 54.625H42.8375ZM34.5 43.125C32.9122 43.125 31.625 44.4122 31.625 46C31.625 47.5878 32.9122 48.875 34.5 48.875C36.0878 48.875 37.375 47.5878 37.375 46C37.375 44.4122 36.0878 43.125 34.5 43.125ZM37.375 20.125H31.625V40.25H37.375V20.125Z" fill="#7E8483"/>
@@ -42,8 +37,10 @@
     <p>{{ settings.newsletter_text }}</p>
     {% endif %}
     <div class="warning-button">
-     <span class="close two">LEAVE SITE</span>
-       <button class="close" data-dismiss="modal">PROCEED, I'M 18+</button>
+     <a href="about:blank" class="close two">LEAVE SITE</a>
+     <span class="close" id="proceed-btn">
+        <a href="javascript:void(0);">PROCEED, I'M 18+</a>
+     </span>
     </div>
   </div>
 </div>
@@ -72,12 +69,6 @@
 </script>
 {%- endif -%}
 {%- if settings.dont_show_again_enable -%}
-<script>
-if(localStorage.getItem("DontShow")) {
-  $("#one-time-newsletter").hide();
-}
-});
-</script>
 
 <script src= 
 "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> 
@@ -92,3 +83,17 @@ if(localStorage.getItem("DontShow")) {
 
 {%- else -%}
 {% endif %}
+<script>
+  $("#proceed-btn").on("click", function(){
+      $('.newsletter-overlay-area').removeClass('newsletter-overlay-active').addClass('newsletter-overlay-inactive');
+      $('#newsletter-content').removeClass('show-popup').addClass('hide-popup');
+  });
+  $('#leave-site-btn').on('click', function() {
+    function closeWeb() {
+      window.top.close();
+    }
+    setTimeout(function() {
+      closeWeb();
+    }, 1000);
+  });
+</script>

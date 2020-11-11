@@ -42,13 +42,13 @@
 
               {{ form.errors | default_errors }} 
             
-              <input type="text" name="customer[first_name]" id="FirstName" class="input-full" required placeholder="{{ 'customer.register.first_name' | t }}" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} autocapitalize="words" autofocus>
+              <input type="text" name="customer[first_name]" id="FirstName" class="input-full" required placeholder="{{ 'customer.register.first_name' | t }}" maxlength="20" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} autocapitalize="words" autofocus>
 
-              <input type="text" name="customer[last_name]" id="LastName" class="input-full" required placeholder="{{ 'customer.register.last_name' | t }}" {% if form.last_name %}value="{{ form.last_name }}"{% endif %} autocapitalize="words">
+              <input type="text" name="customer[last_name]" id="LastName" class="input-full" required placeholder="{{ 'customer.register.last_name' | t }}" maxlength="20" {% if form.last_name %}value="{{ form.last_name }}"{% endif %} autocapitalize="words">
 
-              <input type="email" name="customer[email]" id="Email" class="input-full{% if form.errors contains 'email' %} error{% endif %}" required placeholder="{{ 'customer.register.email' | t }}" {% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off">
+              <input type="email" name="customer[email]" id="Email" class="input-full{% if form.errors contains 'email' %} error{% endif %}" required placeholder="{{ 'customer.register.email' | t }}" oninvalid="setCustomValidity('Please enter a valid Email Address.')" maxlength="30" {% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off">
 
-              <input type="password" name="customer[password]" id="CreatePassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}" minlength="6" required placeholder="{{ 'customer.register.password' | t }}">
+              <input type="password" name="customer[password]" id="CreatePassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}" minlength="6" maxlength="20" required placeholder="{{ 'customer.register.password' | t }}">
               <span id="pass-icon" toggle="#CreatePassword" class="fa fa-fw fa-eye field-icon toggle-password"></span>
               <div class="form-action-button">
                 <button type="submit" class="theme-default-button">Create Account</button>
