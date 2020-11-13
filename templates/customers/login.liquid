@@ -42,9 +42,9 @@
                 </p>
               </div>
               <div class="login-form">
-                <input type="email" name="customer[email]" id="CustomerEmail" class="input-full{% if form.errors contains 'email' %} error{% endif %}" required placeholder="{{ 'customer.login.email' | t }}" oninvalid="setCustomValidity('Please enter a valid Email Address.')" maxlength="30" autocorrect="off" autocapitalize="off" autofocus>
+                <input type="email" name="customer[email]" id="CustomerEmail" class="input-full{% if form.errors contains 'email' %} error{% endif %}" required placeholder="{{ 'customer.login.email' | t }}" oninvalid="setCustomValidity('Please enter a valid Email Address.')" maxlength="70" autocorrect="off" autocapitalize="off" autofocus>
                 {% if form.password_needed %}
-                <input type="password" value="" name="customer[password]" id="CustomerPassword" minlength="6" maxlength="20" class="input-full{% if form.errors contains 'password' %} error{% endif %}" required placeholder="{{ 'customer.login.password' | t }}">
+                <input type="password" value="" name="customer[password]" id="CustomerPassword" minlength="6" maxlength="30" class="input-full{% if form.errors contains 'password' %} error{% endif %}" required placeholder="{{ 'customer.login.password' | t }}">
                 <span id="pass-icon" toggle="#CustomerPassword" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                 {% endif %}
                 <div class="login-toggle-btn">
@@ -84,7 +84,7 @@
                 <p>{{ 'customer.recover_password.subtext' | t }}</p>
               </div>
               <div class="login-form">
-                <input type="email" value="" name="email" id="RecoverEmail" class="input-full"  required placeholder="{{ 'customer.recover_password.email' | t }}" oninvalid="setCustomValidity('Please enter a valid Email Address.')" maxlength="30" autocorrect="off" autocapitalize="off">
+                <input type="email" value="" name="email" id="RecoverEmail" class="input-full"  required placeholder="{{ 'customer.recover_password.email' | t }}" oninvalid="setCustomValidity('Please enter a valid Email Address.')" maxlength="70" autocorrect="off" autocapitalize="off">
                 <div class="login-toggle-btn">
                   <div class="form-action-button">
                     <button type="submit" class="theme-default-button">{{ 'customer.recover_password.submit' | t }}</button>

@@ -66,9 +66,7 @@
         margin-top: -130px;
     }
     .single-product__image {
-        .image-wrap {
-            border: 2px solid #dedede;
-        }
+        border: 2px solid #dedede;
     }
     .product-cart-action {
         .cart-title {
@@ -276,7 +274,7 @@
 .newsletter-content {
     padding: 10px 10px 10px 10px;
     text-align: center;
-    height: 23rem;
+    height: 24rem;
     max-width: 30rem;
 
     .warning-logo {
@@ -293,13 +291,14 @@
     .warning-button {
         margin-top: 50px;
         .two {
-            border: 2px solid #f51414 !important;
-            color: #f51414 !important;
+            border: 2px solid #CB2D0A !important;
+            color: #CB2D0A !important;
             font-weight: 500 !important;
             background: transparent !important;
+            padding: 15px 20px !important;
 
             &:hover {
-                background: #f51414 !important;
+                background: #CB2D0A !important;
                 color: #fff !important;
             }
         }
@@ -308,7 +307,7 @@
             border: 2px solid #00A651;
             background: #00A651;
             border-radius: 5px;
-            padding: 10px 20px 10px 20px;
+            padding: 14px 20px 14px 20px;
             color: #fff;
             font-weight: 500;
             font-size: 18px;
@@ -317,10 +316,16 @@
             opacity: 1;
             text-shadow: 0 0 black;
             margin-left: 10px;
-
+            
             &:hover {
                 background:transparent;
                 color: #00A651;
+            }
+            a {
+                &:hover {
+                    background:transparent;
+                    color: #00A651;
+                }
             }
         }
     }
@@ -1304,7 +1309,7 @@
         p {
             a#a {
                 border: 2px solid #00A651;
-                padding: 10px 35px 0px 35px;
+                padding: 10px 35px 0px 18px;
                 border-radius: 3px;
                 color: #00A651;
                 font-weight: 500;
@@ -1321,6 +1326,7 @@
 
             .address-box-header {
                 .col-md-8 {
+                    background: transparent;
                     h3 {
                         margin-left: 15px;
                         font-weight: bold;
@@ -1343,8 +1349,9 @@
                         border: none;
                         padding: 5px;
                         color: #000;
-                        font-weight: 300;
-
+                        margin-top: -5px;
+                        font-family: 'Work Sans';
+                        font-weight: 500;
                         &:hover {
                             color: #00A651;
                             background: none;
@@ -1418,6 +1425,7 @@
         .bh-sl-title {
             font-weight: bold;
             color: #000;
+            font-size: 35px;
         }
 }
     .bh-sl-form-container {
@@ -1437,23 +1445,42 @@
         }
         .scasl-address-wrap {
             #bh-sl-address {
-            width: 100%;
+            width: 100% !important;
             border: none;
-            border-bottom: 2px solid #00A651;
+            border-bottom: 2px solid #ccc;
             border-radius: 0px;
+
+            &:hover {
+                border-bottom: 2px solid #00A651;
+            }
+            &:focus {
+                border-bottom: 2px solid #00A651;
+            }
             }
         }
         .form-input {
             #scasl-radius-container {
             border: none;
-            border-bottom: 2px solid #00A651;
+            border-bottom: 2px solid #ccc;
             border-radius: 0px;
+            &:hover {
+                border-bottom: 2px solid #00A651;
+            }
+            &:focus {
+                border-bottom: 2px solid #00A651;
+            }
             }
 
             #scasl-lengthUnit {
                 border: none;
-                border-bottom: 2px solid #00A651;
+                border-bottom: 2px solid #ccc;
                 border-radius: 0px;
+                &:hover {
+                    border-bottom: 2px solid #00A651;
+                }
+                &:focus {
+                    border-bottom: 2px solid #00A651;
+                }
             }
         }
         .scasl-search-btn {
@@ -1506,6 +1533,16 @@
         input {
             &:focus {
                 border-bottom: 2px solid #00A651;
+                }
+            }
+            button {
+                bottom: 10px;
+                i {
+                    font-size: 60px;
+
+                    &:hover {
+                        color: #00A651;
+                    }
                 }
             }
         }
@@ -2154,9 +2191,7 @@
 }
 
 .single-product__image {
-    .image-wrap {
-        border: 2px solid #dedede;
-    }
+    border: 2px solid #dedede;
 }
 .single-product__content {
     .price {
@@ -2860,6 +2895,10 @@
 .theme-default-pagination {
     .pagination {
         font-size: 20px;
+
+        @media screen and (max-width: 600px) {
+            font-size: 12px;
+        }
     }
 }
 
@@ -2910,9 +2949,8 @@
     .slider-area {
         .slider-content {
             c {
-                font-size: 6px !important;
-                font-weight: 900 !important;
-                color: green;
+                font-size: 7px !important;
+                font-weight: bold !important;
             }
             .main-title {
                 font-size: 15px;
@@ -3085,3 +3123,22 @@
         }
     }
 }
+
+#store-locator-plantwell-us {
+    .breadcrumb-area {
+        .breadcrumb-list {
+            li {
+                span {
+                  visibility: hidden;
+                    &:after {
+                        content: "Store Locator";
+                        visibility: visible;
+                        position: absolute;
+                        left: 115px;
+                    }
+                }
+            }
+        }
+    }
+}
+
