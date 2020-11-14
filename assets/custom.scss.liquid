@@ -284,21 +284,21 @@
         margin-bottom: 30px;
     }
     h3 {
-        font-size: 30px;
+        font-size: 22px;
         font-weight: bold;
-        font-family: "DM Sans" !important;
+        font-family: "Work Sans" !important;
     }
     .warning-button {
         margin-top: 50px;
         .two {
             border: 2px solid #CB2D0A !important;
-            color: #CB2D0A !important;
-            font-weight: 500 !important;
+            color: #e4350e !important;
+            font-weight: 600 !important;
             background: transparent !important;
             padding: 15px 20px !important;
 
             &:hover {
-                background: #CB2D0A !important;
+                background: #e4350e !important;
                 color: #fff !important;
             }
         }
@@ -309,7 +309,7 @@
             border-radius: 5px;
             padding: 14px 20px 14px 20px;
             color: #fff;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 18px;
             text-align: center;
             float: none;
@@ -319,7 +319,7 @@
             
             &:hover {
                 background:transparent;
-                color: #00A651;
+                color: #003319;
             }
             a {
                 &:hover {
@@ -333,6 +333,8 @@
         p {
             margin-top: -40px;
             margin-bottom: 30px;
+            font-size: 14px;
+            line-height: 25px;
         }
     #proceed {
         background: #00a651;
@@ -788,6 +790,7 @@
     #CustomerLoginForm {
         .login-form-container {
             background: #F1FFF8;
+            height: 360px;
 
             #CustomerEmail {
                 background: transparent;
@@ -878,6 +881,11 @@
 
         .account-optional-action {
             text-align: center;
+            margin-bottom: -60px;
+            position: absolute;
+            bottom: 5px;
+            left: 140px;
+
             a {
                 color: #00A651;
                 font-weight: 500;
@@ -931,6 +939,9 @@
             .login-text {
                 h2 {
                     text-transform: none;
+                    font-size: 33px;
+                    font-weight: bolder;
+                    font-family: 'Work Sans';
                 }
             }
             background: #F1FFF8;
@@ -1322,8 +1333,6 @@
         }
 
         .address-box-content {
-            background: #F1FFF8;
-
             .address-box-header {
                 .col-md-8 {
                     background: transparent;
@@ -1411,6 +1420,11 @@
             }
         }
     }
+
+    #shopify-section-custom-mailchimp_section2 {
+        margin-bottom: -100px !important;
+        margin-top: 25px !important;
+    }
     
 }
 
@@ -1445,7 +1459,7 @@
         }
         .scasl-address-wrap {
             #bh-sl-address {
-            width: 100% !important;
+            width: 100%;
             border: none;
             border-bottom: 2px solid #ccc;
             border-radius: 0px;
@@ -1826,32 +1840,6 @@
                     width: 265px;
                 }
             }
-            #ContactFormDate {
-                display: none;
-            }
-            #ContactFormTime {
-                display: none;
-            }
-            #content-mobile {
-                display:block;
-                margin-top: -85px;         
-                margin-left: 15px;
-
-            #ContactFormDate1 {
-                border: none;
-                background: transparent;
-                border-bottom: 2px solid #dedede;
-                font-size: 13px;
-                width: 300px;
-                }
-                #ContactFormTime1 {
-                    border: none;
-                    background: transparent;
-                    border-bottom: 2px solid #dedede;
-                    font-size: 13px;
-                    width: 300px;
-                    }
-            }
         }
         .row {
             .lezada-button {
@@ -1942,6 +1930,7 @@
         font-weight: 700;
         border-radius: 5px;
     }
+
 }
 
 .shop-product {
@@ -2128,8 +2117,11 @@
     .single-icon-box {
         margin-left: 50px;
         svg {
-            margin-top: -20px;
+            margin-top: -5px;
             margin-right: -5px;
+        }
+        #address {
+            margin-top: -25px;
         }
         .icon-box-content {
             .content {
@@ -2665,11 +2657,11 @@
 
                 .shop-product__description-tab {
                     .nav {
-                        margin-left: -14px;
-                        margin-right: -14px;
+                        margin-left: -7px;
+                        margin-right: -7px;
 
                         a {
-                            font-size: 9px;
+                            font-size: 16px;
                             margin-left: 0;
                         }
                     }
@@ -2958,6 +2950,13 @@
                 margin-bottom: 30px;
             }
         }
+        .lezada-button--small {
+            strong {
+            position: absolute;
+            top: 114px;
+            right: 80px;
+            }
+        }
     }
     .decor-slider-wrapper {
         .lezada-button {
@@ -3039,7 +3038,8 @@
             margin-left: -50px !important;
         }
         #scapl-geocode-btn {
-            margin-right: -55px !important;
+            position: absolute !important;
+            right: -75px !important;
         }
         #scasl-radius-container {
             width: 225px !important;
@@ -3142,3 +3142,8 @@
     }
 }
 
+#loading-center {
+    #loading-center-absolute{
+        display: none;
+    }
+}

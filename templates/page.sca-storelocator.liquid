@@ -8,9 +8,8 @@
             <div id="scasl-tab-radius">
                 <form id="bh-sl-user-location" class="scasl-distance" method="post" action="#">
                     <div class="form-input">
-                        <label for="bh-sl-address">Current Location</label>
                           <div class="scasl-address-wrap">
-                            <input type="text" id="bh-sl-address" name="bh-sl-address" />
+                            <input type="text" id="bh-sl-address" name="bh-sl-address" class="pac-target-input" placeholder="Enter a Location" autocomplete="off">
                               <a href="#" id="scapl-geocode-btn" title="Find My Location" style="background-color: none !important">
                                 <img src="{{ 'sca.location-find-location.png' | asset_url }}">
                             </a>

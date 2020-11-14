@@ -26,64 +26,46 @@
                     {{ form.errors | default_errors }}
                   </div>
                   <div class="col-md-6 mb-40">
-                    <input type="text" required placeholder="First Name" class="{% if form.errors contains 'fname' %}error{% endif %}" name="contact[fname]" id="ContactFormFName" value="{% if form.fname %}{{ form.fname }}{% elsif customer.fname %}{{ customer.fname }}{% endif %}">
+                    <input type="text" required placeholder="First Name" class="{% if form.errors contains 'fname' %}error{% endif %}" name="contact[fname]" id="ContactFormFName" minlength="2" maxlength="20" value="{% if form.fname %}{{ form.fname }}{% elsif customer.fname %}{{ customer.fname }}{% endif %}">
                   </div>
                 
                   <div class="col-md-6 mb-40">
-                    <input type="text" required placeholder="Last Name" class="{% if form.errors contains 'lname' %}error{% endif %}" name="contact[lname]" id="ContactFormLName" value="{% if form.lname %}{{ form.lname }}{% elsif customer.lname %}{{ customer.lname }}{% endif %}">
+                    <input type="text" required placeholder="Last Name" class="{% if form.errors contains 'lname' %}error{% endif %}" name="contact[lname]" id="ContactFormLName" minlength="2" maxlength="20" value="{% if form.lname %}{{ form.lname }}{% elsif customer.lname %}{{ customer.lname }}{% endif %}">
                   </div>
                 
                   <div class="col-md-6 mb-40">
-                    <input type="email" required placeholder="Email Address" class="{% if form.errors contains 'email' %}error{% endif %}" name="contact[email]" id="ContactFormEmail" value="{% if form.email %}{{ form.email }}{% elsif customer.email %}{{ customer.email }}{% endif %}">
+                    <input type="email" required placeholder="Email Address" class="{% if form.errors contains 'email' %}error{% endif %}" name="contact[email]" id="ContactFormEmail" pattern="username@domain.tld" maxlength="70" oninvalid="setCustomValidity('Please enter a valid Email Address.')" value="{% if form.email %}{{ form.email }}{% elsif customer.email %}{{ customer.email }}{% endif %}">
                   </div>
                 
                   <div class="col-md-6 mb-40">
-                    <input type="tel" required placeholder="Phone Number" class="{% if form.errors contains 'phone' %}error{% endif %}" name="contact[phone]" id="ContactFormPhone" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+                    <input type="tel" required placeholder="Phone Number" class="{% if form.errors contains 'phone' %}error{% endif %}" name="contact[phone]" id="ContactFormPhone" pattern="[0-9\-]*" minlength="7" maxlength="12" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+                  </div>
+                  <div class="col-md-6 mb-40">
+                    <input type="date" required placeholder="Date" class="{% if form.errors contains 'date' %}error{% endif %}" name="contact[date]" id="ContactFormDate" value="{% if form.date %}{{ form.date }}{% elsif customer.date %}{{ customer.date }}{% endif %}">
                   </div>
 
                   <div class="col-md-6 mb-40">
-                    <input type="date" required placeholder="Preferred date of appointment" class="{% if form.errors contains 'date' %}error{% endif %}" name="contact[date]" id="ContactFormDate" value="{% if form.date %}{{ form.date }}{% elsif customer.date %}{{ customer.date }}{% endif %}">
+                    <input type="time" required placeholder="Time" class="{% if form.errors contains 'time' %}error{% endif %}" name="contact[time]" id="ContactFormTime" value="{% if form.time %}{{ form.time }}{% elsif customer.time %}{{ customer.time }}{% endif %}">
                   </div>
-
-                  <div class="col-md-6 mb-40">
-                    <input type="time" required placeholder="Preferred time of appointment" class="{% if form.errors contains 'time' %}error{% endif %}" name="contact[time]" id="ContactFormTime" value="{% if form.time %}{{ form.time }}{% elsif customer.time %}{{ customer.time }}{% endif %}">
-                  </div>
-                
                   <div class="col-lg-12 mb-40">
-                    <textarea placeholder="Message" class="{% if form.errors contains 'body' %}error{% endif %}" name="contact[body]" id="ContactFormMessage" value="{% if form.body %}{{ form.body }}{% elsif customer.body %}{{ customer.body }}{% endif %}"></textarea>
+                    <textarea required placeholder="Message" class="{% if form.errors contains 'body' %}error{% endif %}" name="contact[body]" id="ContactFormMessage" maxlength="250" value="{% if form.body %}{{ form.body }}{% elsif customer.body %}{{ customer.body }}{% endif %}"></textarea>
                   </div>
                   <div class="col-lg-12 text-right">
-                    <button type="submit" value="submit" class="lezada-button lezada-button--medium" data-toggle="modal" data-target="#success_tic">SEND APPOINTMENT REQUEST</button>
+                    <button type="submit" value="submit" class="lezada-button lezada-button--medium">SEND APPOINTMENT REQUEST</button>
+                    <input type="hidden" value="submit" class="lezada-button lezada-button--medium" data-toggle="modal" data-target="#centralModalSuccess">
                   </div>
                 </div>
                 {% endform %}
-                  <script>
-                    jQuery('.addtocartqv').click(function(e) {
-                      e.preventDefault();
-                      Shopify.addItemFromFormStart('add-item-qv', jQuery(this).attr('id'));
-                    });
-                  </script> 
               </div>
           </div>
       </div>
       </div>
     </div>
   </div>
-</div>
+</div> 
 
-<script>  
-  var mainImage = '';
-  jQuery(function ($) {
-                      function selectGrid(_parent) {
-                        setTimeout(timeout, 5);
-                        function timeout() {
-                          if(jQuery(_parent + " .selector-wrapper").length > 2){
-                            jQuery(_parent + " .single-option-selector").addClass("select--wd");
-                          } else if(jQuery(_parent + " .selector-wrapper").length == 1){
-                            jQuery(_parent + " .single-option-selector").before("<label>{{ product.options.first }}</label>");
-                                                                                jQuery(_parent + " .single-option-selector").addClass("select--wd");
-                          }
-                        }
-                      };
-                    });
+<script>
+  $("#centralModalSuccess").onSubmit('show.bs.modal', function(){
+   alert("Hello World!");
+});
 </script>
