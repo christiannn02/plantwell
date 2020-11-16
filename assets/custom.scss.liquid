@@ -161,6 +161,21 @@
             }
         .footer-social-links {
             margin-left: -130px;
+            
+            a {
+                .address {
+                    float: left 
+                }
+                .phone {
+                    float: left;
+                }
+                .email {
+                    float: left;
+                }
+                p {
+                    margin-left: 25px;
+                }
+            }
         }
         }
         .appointment {
@@ -1463,6 +1478,7 @@
             border: none;
             border-bottom: 2px solid #ccc;
             border-radius: 0px;
+            padding: 0px;
 
             &:hover {
                 border-bottom: 2px solid #00A651;
@@ -1477,6 +1493,7 @@
             border: none;
             border-bottom: 2px solid #ccc;
             border-radius: 0px;
+            padding: 0px;
             &:hover {
                 border-bottom: 2px solid #00A651;
             }
@@ -1489,6 +1506,7 @@
                 border: none;
                 border-bottom: 2px solid #ccc;
                 border-radius: 0px;
+                padding: 0px;
                 &:hover {
                     border-bottom: 2px solid #00A651;
                 }
@@ -1632,6 +1650,11 @@
 
         .breadcrumb-title {
             display: none;
+        }
+        ul {
+            li {
+                font-size: 17px;
+            }
         }
 }
 }
@@ -1916,10 +1939,14 @@
 }
 
 .decor-slider-wrapper {
+    .decor-single-slider-content {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
     .slick-arrow {
         color: #000 !important;
         font-size: 50px;
-
         &:hover {
             color: #00A651 !important;
         }
@@ -1929,6 +1956,15 @@
         font-size: 13px;
         font-weight: 700;
         border-radius: 5px;
+    }
+
+    .banner1 {
+        background: #fff;
+        position: fixed;
+    }
+    .banner2 {
+        background: #fff;
+        position: fixed;
     }
 
 }
@@ -3084,9 +3120,12 @@
                 &:focus {
                 border-bottom: 2px solid #00A651;
                 }
+                #five {
+                    fill: green;
+                }
             }
             .active {
-                border: 3px solid #00A651;
+                border: 2px solid #00A651;
                 padding: 1px;
             }
         }
@@ -3140,10 +3179,99 @@
             }
         }
     }
+    @media screen and (max-width: 600px) {
+        .breadcrumb-area {
+            .breadcrumb-list {
+                li {
+                    span {
+                        &:after {
+                            left: 80px;
+                        }
+                    }
+                }
+            }
+        }
+        .offcanvas-mobile-menu {
+            .active {
+                #scasl-app-container {
+                    width: 20%;
+                    float: right;
+                }
+            }
+        }
+    }
 }
 
 #loading-center {
     #loading-center-absolute{
         display: none;
     }
+}
+
+.offcanvas-mobile-menu {
+    .offcanvas-menu-close {
+        background: #00A651;
+    }
+    .offcanvas-mobile-search-area {
+        input {
+            background: transparent;
+            border-bottom: 2px solid #ccc;
+
+            &:hover {
+                border-bottom: 2px solid #00A651;
+            }
+            &:focus {
+                border-bottom: 2px solid #00A651;
+            }
+        }
+    }
+}
+
+#centralModalSuccess {
+    .modal-content {
+        width: 350px;
+        height: 350px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .modal-body {
+            .heading {
+                margin-bottom: 20px;
+                margin-top: 10px;
+                font-weight: 500;
+            }
+            .sub-heading {
+                font-size: 14px;
+                font-weight: 400;
+                margin-left: 12px;
+                margin-right: 12px;
+            }
+        }
+    }
+    .modal-header {
+        border: none;
+    #succes-btn-close {
+        border: none;
+        .white-text {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+        }
+    }
+}
+.modal-footer {
+    border: none;
+    .btn {
+        margin-bottom: 20px;
+        background: #00A651;
+        border: 2px solid #00A651;
+        color: #fff;
+        font-weight: 700;
+
+        &:hover {
+            background: transparent;
+            color: #00A651;
+        }
+    }
+}
 }
