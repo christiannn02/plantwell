@@ -39,7 +39,7 @@
                   </div>
 
                   <div class="col-md-6 mb-40">
-                    <input type="time" required placeholder="Time" class="{% if form.errors contains 'time' %}error{% endif %}" name="contact[time]" id="ContactFormTime" value="{% if form.time %}{{ form.time }}{% elsif customer.time %}{{ customer.time }}{% endif %}">
+                    <input type="time" required placeholder="Time" class="{% if form.errors contains 'time' %}error{% endif %}" name="contact[time]" id="ContactFormTime" min="08:00" max="18:00" value="now">
                   </div>
                   <div class="col-lg-12 mb-40">
                     <textarea required placeholder="Message" class="{% if form.errors contains 'body' %}error{% endif %}" name="contact[body]" id="ContactFormMessage" maxlength="250" value="{% if form.body %}{{ form.body }}{% elsif customer.body %}{{ customer.body }}{% endif %}"></textarea>
@@ -58,7 +58,7 @@
   </div>
 </div> 
 
-<div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade successModal" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-notify modal-success" role="document">
 
     <div class="modal-content">
@@ -88,16 +88,37 @@
 <script>
  ContactFormDate.min = new Date().toISOString().split("T")[0];
  ContactFormDate.value = new Date().toISOString().split("T")[0];
- $(window).on('load',function(){
-    var str = window.location.href;
-    var url = str.split('?');
-    var urlSplitter = str.split('/');
-    var urlValidator = urlSplitter[4].split('?');
-    if(urlValidator[0] != "contact-us") {
-      if(url[1] == "contact_posted=true") {
-        $('#centralModalSuccess').modal('show').find('.modal-content').load($(this).attr('href'));;
-        console.log(urlValidator);
-      }
-    }
- });
+ 
+ $(function(){     
+  var d = new Date(),        
+      h = d.getHours(),
+      m = d.getMinutes();
+  if(h < 10) h = '0' + h; 
+  if(m < 10) m = '0' + m; 
+  $('input[type="time"][value="now"]').each(function(){ 
+    $(this).attr({'value': h + ':' + m});
+  });
+});
+
+//  $(window).on('load',function(){
+//     var str = window.location.href;
+//     var url = str.split('?');
+//     var urlSplitter = str.split('/');
+//     var urlValidator;
+//     if(urlSplitter.length < 5) {
+//       if(url[1] == "contact_posted=true") {
+//             $('#centralModalSuccess').modal('show');
+//             $('#one-time-newsletter').modal('hide');
+//             console.log(urlValidator);
+//           }
+//     } else if(urlSplitter.length == 5) {
+//       urlValidator = urlSplitter[4].split('?');
+//       if(urlValidator[0] != "contact-us") {
+//           if(url[1] == "contact_posted=true") {
+//             $('#centralModalSuccess').modal('show');
+//             console.log(urlValidator);
+//           }
+//         }
+//     }
+//  });
 </script>

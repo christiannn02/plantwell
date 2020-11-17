@@ -16,7 +16,7 @@
              {% endif %}
              "autoplay": {{ section.settings.slider_autoplay_enable }},
              "autoplaySpeed": 5000,
-             "speed": 1000,
+             "speed": 3000,
              "responsive":[
                {"breakpoint":1501, "settings": { {%- unless section.settings.slider_fulld_width -%}"centerPadding": "160px" {%- endunless -%}} },
                {"breakpoint":1199, "settings": { "centerMode": false} },
@@ -260,5 +260,18 @@
    }
  {% endschema %}
  
+ <script>
+   setTimeout (function(){
+                      slick-arrow.style.display ='none';
+                      setTimeout (function(){
+                        setTimeout (function(){
+                         slick-arrow.style.display ='none';
+                        },5000);
+                       slick-arrow.style.display ='inline';
+                      },5000);
+
+                    },5000);
+                    var hide_timeout = 5000;
+ </script>
  
  

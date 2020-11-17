@@ -379,6 +379,7 @@
             border: 2px solid red;
         }
     }
+
 }
 
 .cart-overlay {
@@ -1847,7 +1848,7 @@
             width: 345px;
             margin-left: auto;
             margin-right: auto;
-
+           
             .qwick-view-content {
                 h1 {
                     font-size: 20px;
@@ -1860,7 +1861,7 @@
                 .col-md-6 {
                     margin-right: auto;
                     margin-left: auto;
-                    width: 265px;
+                    width: 300px;
                 }
             }
         }
@@ -1940,9 +1941,6 @@
 
 .decor-slider-wrapper {
     .decor-single-slider-content {
-        width: 75%;
-        margin-left: auto;
-        margin-right: auto;
     }
     .slick-arrow {
         color: #000 !important;
@@ -2781,10 +2779,16 @@
 
     .login {
         @media screen and (max-width: 600px) {
+            #CustomerLoginForm {
             .position-absolute {
                 display: none;
             }
+            .account-optional-action {
+                right: 10px;
+                left: 0px;
+            }
         }
+    }
     }
 
     .my-account-page {
@@ -2914,10 +2918,24 @@
     }
 }
 
-.newsletter content {
+.newsletter-content {
     @media screen and (max-width: 600px) {
-        display: block;
-    }
+        height: 350px;
+        width: 350px;
+    
+    .warning-button {
+            .two {
+                position: absolute;
+                left: 17px;
+                font-size: 12px;
+            }
+            #proceed-btn {
+                position: absolute;
+                right: 17px;
+                font-size: 14px;
+            }
+        }
+    }   
 }
 
 .theme-default-pagination {
@@ -2987,11 +3005,7 @@
             }
         }
         .lezada-button--small {
-            strong {
-            position: absolute;
-            top: 114px;
-            right: 80px;
-            }
+    
         }
     }
     .decor-slider-wrapper {
@@ -3048,6 +3062,9 @@
 
 @media screen and (max-width: 600px) {
     .shop-page-wrapper {
+        .shop-page-header {
+            border-bottom: none;
+        }
         .filter-icons {
             display: none;
         }
@@ -3055,13 +3072,12 @@
             display: none;
         }
         .filter-dropdown {
-            margin-left: auto;
-            margin-right: auto;
+            position: absolute;
+            left: 5px;
         }
         .advance-filter-icon {
-            align-content: center;
-            margin-left: auto;
-            margin-right: auto;
+          position: absolute;
+          right: 10px;
         }
         .shopbar_right_info {
             
@@ -3072,6 +3088,12 @@
         #bh-sl-address {
             width: 220px !important;
             margin-left: -50px !important;
+        }
+        #scapl-geocode-btn {
+            img {
+                position: absolute;
+                right: -16px;
+            }
         }
         #scapl-geocode-btn {
             position: absolute !important;
@@ -3233,6 +3255,7 @@
         height: 350px;
         margin-left: auto;
         margin-right: auto;
+        margin-top: 200px;
 
         .modal-body {
             .heading {
@@ -3266,12 +3289,12 @@
         background: #00A651;
         border: 2px solid #00A651;
         color: #fff;
-        font-weight: 700;
+        font-weight: 500;
 
-        &:hover {
-            background: transparent;
-            color: #00A651;
+            &:hover {
+                background: transparent;
+                color: #00A651;
+            }
         }
     }
-}
 }
