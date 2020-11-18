@@ -1673,6 +1673,15 @@
 }
 
 .header-bottom-container {
+    .logo-with-offcanvas {
+        .logo {
+            .theme-logo {
+                img {
+                    image-rendering: pixelated;
+                }
+            }
+        }
+    }
     .header-right-container {
         .appointment {
             width: 200px !important;
@@ -3296,5 +3305,36 @@
                 color: #00A651;
             }
         }
+    }
+}
+
+.site-nav  {
+    .nav-active {
+        border: 2px solid #00A651;
+        background: #00A651;
+        padding: 2px 10px;
+        color: #fff !important;
+        border-radius: 3px;
+        font-weight: bold !important;
+    }
+    .active {
+        .menu-has-children {
+        border: 2px solid #00A651;
+        background: #00A651;
+        padding: 2px 10px;
+        color: #fff !important;
+        border-radius: 3px;
+        font-weight: bold !important;
+        }
+    }
+}
+
+.order-online-text {
+    .number {
+        b {
+        &:hover {
+            color: #00A651;
+        }
+    }
     }
 }

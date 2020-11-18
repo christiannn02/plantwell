@@ -2,7 +2,7 @@
   {%- for link in linklists.main-menu.links -%}
   {%- assign childlink_handle = link.title | handle -%}
   {%- if linklists[childlink_handle].links.size > 0 -%}
-  <li class="menu-item-has-children{% if link.active %} active{%- endif -%}"><a href="{{ link.url }}">{{ link.title }}</a>
+  <li class="menu-item-has-children{% if link.active %} active{%- endif -%}"><a class="menu-has-children"href="{{ link.url }}">{{ link.title }}</a>
     <ul class="sub-menu">
       {%- assign menuhandle = link.title | strip -%}
       {%- for block in section.blocks -%}
@@ -222,7 +222,11 @@
     </ul>
   </li>
   {%- else -%}
-  <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+  {% assign activator = canonical_url | split: '/' %}
+  {% assign validator = link.url | split: '/' %}
+  {% assign split_activator = activator[4] | split: '%' %}
+  {% assign split_validator = validator[2] | split: '%' %}
+  <li><a href="{{ link.url }}" class="plantwell-nav {% if split_activator[0] == split_validator[0] %}nav-active{% endif %}">{{ link.title }}</a></li>
   {%- endif -%}
   {%- endfor -%}
 </ul>
